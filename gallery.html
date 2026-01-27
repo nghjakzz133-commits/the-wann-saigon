@@ -5,124 +5,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery | The WANN Saigon</title>
 
-  <!-- CSS core -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/core.css" />
   <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/gallery.css" />
+
+  <!-- ICON -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
-  <!-- HEADER (dùng chung) -->
-  <header class="site-header">
-    <div class="container">
-      <div class="logo">
-        <img src="assets/images/logo/logo.png" alt="The WANN Saigon">
-      </div>
-
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="party.html">Party</a>
-        <a href="gallery.html" class="active">Gallery</a>
-        <a href="booking.html">Booking</a>
-      </nav>
-
-      <div class="lang-switch">
-        <button>VI</button>
-        <button>EN</button>
-      </div>
-
-      <div class="menu-toggle">☰</div>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <div class="logo">
+      <img src="assets/images/logo/logo.png" alt="The WANN Saigon">
     </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="gallery-hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Gallery</h1>
-      <p>Moments of ambiance, celebration, and refined nightlife.</p>
+    <nav class="main-nav">
+      <a href="index.html" data-vi="Trang chủ" data-en="Home"></a>
+      <a href="party.html" data-vi="Party" data-en="Party"></a>
+      <a href="gallery.html" class="active" data-vi="Gallery" data-en="Gallery"></a>
+      <a href="booking.html" data-vi="Booking" data-en="Booking"></a>
+    </nav>
+
+    <div class="lang-switch">
+      <button data-lang="vi">VI</button>
+      <button data-lang="en">EN</button>
     </div>
-  </section>
 
-  <!-- SPACE -->
-  <section class="gallery-section">
-    <h2>Không gian The WANN Saigon</h2>
-    <p class="section-desc">
-      Thiết kế sang trọng giữa trung tâm Sài Gòn, nơi ánh sáng và không gian hòa quyện.
+    <div class="menu-toggle">☰</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="gallery-hero">
+  <div class="overlay"></div>
+  <div class="hero-content fade-item">
+    <h1 data-vi="Gallery" data-en="Gallery"></h1>
+    <p
+      data-vi="Gallery này không phải kho ảnh – mà là hành trình cảm xúc."
+      data-en="This gallery is not a collection of photos — it is an emotional journey.">
     </p>
-    <div class="gallery-grid">
-      <img src="assets/images/space/IMG_8001.jpeg">
-      <img src="assets/images/space/IMG_8002.jpeg">
-      <img src="assets/images/space/IMG_8777.jpeg">
-      <img src="assets/images/space/IMG_8778.jpeg">
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PARTY -->
-  <section class="gallery-section dark">
-    <h2>Party & Celebration</h2>
-    <p class="section-desc">
-      Sinh nhật, private party và những đêm kỷ niệm đáng nhớ.
-    </p>
-    <div class="gallery-grid">
-      <img src="assets/images/party/IMG_8019.jpeg">
-      <img src="assets/images/party/IMG_8022.jpeg">
-      <img src="assets/images/party/IMG_8023.jpeg">
-      <img src="assets/images/party/IMG_8024.jpeg">
-    </div>
-  </section>
+<!-- BOOKING HOST -->
+<section class="gallery-section booking-host-section dark">
+  <h2
+    class="fade-item"
+    data-vi="Booking Host – Người đồng hành của buổi tiệc"
+    data-en="Booking Hosts – Your companions throughout the night">
+  </h2>
 
-  <!-- DETAIL -->
-  <section class="gallery-section">
-    <h2>Chi tiết tạo nên đẳng cấp</h2>
-    <p class="section-desc">
-      Từng góc nhỏ đều được chăm chút để mang lại cảm giác tinh tế.
-    </p>
-    <div class="gallery-grid small">
-      <img src="assets/images/detail/IMG_7998.jpeg">
-      <img src="assets/images/detail/IMG_8026.jpeg">
-      <img src="assets/images/detail/IMG_9455.jpeg">
-      <img src="assets/images/detail/IMG_9457.jpeg">
-    </div>
-  </section>
+  <p
+    class="section-desc fade-item"
+    data-vi="Không chỉ là người đặt bàn, đội ngũ booking tại The WANN Saigon là những người trực tiếp kết nối, dẫn dắt và đảm bảo trải nghiệm của khách xuyên suốt đêm tiệc."
+    data-en="More than just table bookings, The WANN Saigon’s booking hosts are dedicated companions who guide, connect, and ensure a seamless experience throughout the night.">
+  </p>
 
-  <!-- ACTION -->
-  <section class="gallery-section dark">
-    <h2>Nhịp đêm tại The WANN</h2>
-    <p class="section-desc">
-      Âm nhạc, bartender và những khoảnh khắc chuyển động đầy cảm xúc.
-    </p>
-    <div class="gallery-grid">
-      <img src="assets/images/action/IMG_8625.jpeg">
-      <img src="assets/images/action/IMG_9463.jpeg">
-      <img src="assets/images/action/IMG_9464.jpeg">
-      <img src="assets/images/action/IMG_9465.jpeg">
+  <!-- FEATURES -->
+  <div class="host-features fade-item">
+    <div class="feature-item">
+      <i class="fa-solid fa-handshake"></i>
+      <span
+        data-vi="Tiếp đón & chăm sóc khách trực tiếp tại bàn"
+        data-en="Direct guest reception and table-side care">
+      </span>
     </div>
-  </section>
 
-  <!-- BOOKING HOST -->
-  <section class="gallery-section">
-    <h2>Đội ngũ Booking đồng hành</h2>
-    <p class="section-desc">
-      Luôn có người trực tiếp tiếp đón và hỗ trợ xuyên suốt buổi tiệc.
-    </p>
-    <div class="gallery-grid host">
-      <img src="assets/images/booking-host/IMG_9466.jpeg">
-      <img src="assets/images/booking-host/IMG_9467.jpeg">
+    <div class="feature-item">
+      <i class="fa-solid fa-martini-glass-citrus"></i>
+      <span
+        data-vi="Hỗ trợ sắp xếp bàn, đồ uống và không gian phù hợp"
+        data-en="Assistance with table setup, drinks, and ambiance">
+      </span>
     </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="gallery-cta">
-    <h2>Đặt Party tại The WANN Saigon</h2>
-    <p>Liên hệ qua các kênh chính thức để được tư vấn chi tiết.</p>
-    <div class="cta-buttons">
-      <a href="#" class="btn-primary">Fanpage</a>
-      <a href="#" class="btn-secondary">Zalo</a>
-      <a href="tel:0919918178" class="btn-secondary">Hotline</a>
+    <div class="feature-item">
+      <i class="fa-solid fa-music"></i>
+      <span
+        data-vi="Kết nối DJ – âm nhạc – ánh sáng theo mood buổi tiệc"
+        data-en="Connecting DJ, music, and lighting to match the party mood">
+      </span>
     </div>
-  </section>
 
+    <div class="feature-item">
+      <i class="fa-solid fa-star"></i>
+      <span
+        data-vi="Đảm bảo trải nghiệm trọn vẹn từ lúc vào đến khi kết thúc"
+        data-en="Ensuring a complete experience from arrival to closing">
+      </span>
+    </div>
+  </div>
+
+  <!-- IMAGES -->
+  <div class="gallery-grid host full">
+    <img src="assets/images/booking-host/IMG_9466.jpeg" loading="lazy" class="fade-item">
+    <img src="assets/images/booking-host/IMG_9467.jpeg" loading="lazy" class="fade-item">
+    <img src="assets/images/booking-host/IMG_9468.jpeg" loading="lazy" class="fade-item">
+    <img src="assets/images/booking-host/IMG_9469.jpeg" loading="lazy" class="fade-item">
+    <img src="assets/images/booking-host/IMG_9470.jpeg" loading="lazy" class="fade-item">
+    <img src="assets/images/booking-host/IMG_9471.jpeg" loading="lazy" class="fade-item">
+    <img src="assets/images/booking-host/IMG_9472.jpeg" loading="lazy" class="fade-item">
+    <img src="assets/images/booking-host/IMG_9473.jpeg" loading="lazy" class="fade-item">
+    <img src="assets/images/booking-host/IMG_9474.jpeg" loading="lazy" class="fade-item">
+    <img src="assets/images/booking-host/IMG_9475.jpeg" loading="lazy" class="fade-item">
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="gallery-cta">
+  <h2
+    class="fade-item"
+    data-vi="Đặt Party tại The WANN Saigon"
+    data-en="Book Your Party at The WANN Saigon">
+  </h2>
+
+  <p
+    class="fade-item"
+    data-vi="Liên hệ trực tiếp đội ngũ booking để được tư vấn đúng nhu cầu và phong cách."
+    data-en="Contact our booking team directly for personalized consultation and arrangements.">
+  </p>
+
+  <div class="cta-buttons fade-item">
+    <a href="#" class="btn-primary" data-vi="Fanpage" data-en="Fanpage"></a>
+    <a href="#" class="btn-secondary" data-vi="Zalo" data-en="Zalo"></a>
+    <a href="tel:0919918178" class="btn-secondary" data-vi="Hotline" data-en="Hotline"></a>
+  </div>
+</section>
+
+<script src="js/main.js"></script>
 </body>
 </html>
