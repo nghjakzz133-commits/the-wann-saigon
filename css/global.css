@@ -260,3 +260,34 @@ section p {
     height: 30px;
   }
 }
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo img {
+  height: 34px;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 32px;
+  }
+}
+.lang-switch {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.menu-toggle {
+  margin-left: 12px;
+}
