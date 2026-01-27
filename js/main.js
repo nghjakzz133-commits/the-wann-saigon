@@ -1,0 +1,60 @@
+/* ===============================
+   THE WANN SAIGON – LUXURY JS
+   Clean • Smooth • High-end
+================================ */
+
+// 1. Header đổi style khi scroll
+const header = document.querySelector('.site-header');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+
+// 2. Fade-in section khi scroll (rất sang)
+const sections = document.querySelectorAll('section');
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+sections.forEach(section => {
+  section.classList.add('fade');
+  observer.observe(section);
+});
+
+
+// 3. Smooth scroll cho anchor
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+
+// 4. Button hover micro-effect (luxury feel)
+const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+
+buttons.forEach(btn => {
+  btn.addEventListener('mouseenter', () => {
+    btn.style.transform = 'translateY(-2px)';
+  });
+
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = 'translateY(0)';
+  });
+});
