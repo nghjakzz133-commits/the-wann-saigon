@@ -1,0 +1,108 @@
+/* ===============================
+   GALLERY – THE WANN SAIGON
+   Emotion • Luxury • Nightlife
+================================ */
+
+.gallery-hero {
+  position: relative;
+  height: 60vh;
+  background: url("../assets/images/space/IMG_8001.jpeg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.gallery-hero .hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.gallery-hero h1 {
+  font-size: 42px;
+  letter-spacing: 3px;
+}
+
+.gallery-hero p {
+  margin-top: 12px;
+  opacity: 0.85;
+}
+
+/* SECTION */
+.gallery-section {
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.gallery-section.dark {
+  background: #0b0b0b;
+}
+
+.gallery-section h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.section-desc {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  opacity: 0.75;
+}
+
+/* GRID */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid.small {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery-grid.host {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform .4s ease, opacity .4s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+/* CTA */
+.gallery-cta {
+  padding: 100px 24px;
+  text-align: center;
+  background: linear-gradient(to bottom, #000, #111);
+}
+
+.gallery-cta h2 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.gallery-cta p {
+  opacity: 0.75;
+  margin-bottom: 32px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
