@@ -250,3 +250,13 @@ section p {
     margin: 16px 0;
   }
 }
+.logo img {
+  height: 36px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 30px;
+  }
+}
