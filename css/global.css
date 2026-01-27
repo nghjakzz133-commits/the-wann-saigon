@@ -647,3 +647,11 @@ section::before {
 section p {
   color: rgba(255,255,255,0.82);
 }
+/* =====================================
+   CENTER CTA – PARTY SECTION
+===================================== */
+
+.party-types .btn-primary {
+  display: block;
+  margin: 32px auto 0;
+}
