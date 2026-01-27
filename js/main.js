@@ -78,3 +78,10 @@ const savedLang = localStorage.getItem('lang') || 'vi';
 transEls.forEach(el => {
   el.textContent = el.getAttribute(`data-${savedLang}`);
 });
+// JS bật/tắt menu
+const toggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.main-nav');
+
+toggle.addEventListener('click', () => {
+  nav.classList.toggle('open');
+});
