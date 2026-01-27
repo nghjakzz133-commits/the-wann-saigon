@@ -120,3 +120,55 @@
   opacity: 1;
   transform: translateY(0);
 }
+/* ========== HORIZONTAL GALLERY PRO ========== */
+.gallery-section.horizontal {
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.horizontal-gallery {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 24px 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-gallery img {
+  flex: 0 0 auto;
+  width: 78vw;
+  max-width: 520px;
+  height: 60vh;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  scroll-snap-align: center;
+
+  /* Hiệu ứng xịn */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+  transition: transform .6s ease, opacity .6s ease;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .horizontal-gallery img {
+    width: 420px;
+    height: 520px;
+  }
+}
+
+/* Fade-in */
+.fade-item {
+  opacity: 0;
+  transform: translateY(30px) scale(0.96);
+}
+
+.fade-item.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
