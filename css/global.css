@@ -220,3 +220,14 @@ section p {
 .lang-switch button:hover {
   opacity: 1;
 }
+.menu-toggle {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
