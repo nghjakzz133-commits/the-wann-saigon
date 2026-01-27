@@ -291,3 +291,38 @@ section p {
 .menu-toggle {
   margin-left: 12px;
 }
+.logo {
+  position: relative;
+  display: inline-block;
+}
+
+.logo img {
+  display: block;
+  height: 34px; /* chỉnh theo ý */
+}
+
+/* ánh sáng quét */
+.logo.shimmer::after {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -80%;
+  width: 60%;
+  height: 220%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 215, 150, 0.6) 50%,
+    transparent 100%
+  );
+  transform: rotate(20deg);
+  animation: shimmer 4.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0%   { left: -80%; opacity: 0; }
+  20%  { opacity: 1; }
+  50%  { left: 130%; opacity: 0; }
+  100% { left: 130%; opacity: 0; }
+}
