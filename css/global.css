@@ -432,39 +432,3 @@ section p {
   width: 100%;
 }
 
-/* ================================
-   MENU HIERARCHY (CẤP BẬC)
-   ================================ */
-
-/* Party + Booking = trọng tâm */
-.main-nav a[href*="party"],
-.main-nav a[href*="booking"] {
-  font-weight: 600;
-  color: rgba(255,255,255,0.85);
-}
-
-/* Gallery + Contact = secondary */
-.main-nav a[href*="gallery"],
-.main-nav a[href*="contact"] {
-  opacity: 0.75;
-}
-
-/* Trang chủ = neutral */
-.main-nav a[href*="index"] {
-  opacity: 0.6;
-}
-
-/* ================================
-   MOBILE MENU – DARK LUXURY
-   ================================ */
-
-.main-nav.open {
-  background: rgba(10,10,10,0.96);
-  backdrop-filter: blur(10px);
-}
-
-.main-nav.open a {
-  font-size: 16px;
-  padding: 14px 0;
-  letter-spacing: 0.15em;
-}
