@@ -345,3 +345,39 @@ section p {
 .logo img {
   filter: drop-shadow(0 0 8px rgba(255, 215, 150, 0.4));
 }
+.party-highlight,
+.booking-cta {
+  text-align: center;
+}
+
+.party-highlight .container,
+.booking-cta .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.party-highlight h2,
+.party-highlight p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.party-highlight .btn-primary {
+  margin-top: 24px;
+}
+.booking-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.booking-buttons a {
+  min-width: 140px;
+  text-align: center;
+}
+.booking-cta h2 {
+  text-align: center;
+  max-width: 720px;
+}
