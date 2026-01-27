@@ -127,3 +127,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+/* ===============================
+   Gallery Lazy Fade-in
+================================ */
+
+const fadeItems = document.querySelectorAll('.fade-item');
+
+const fadeObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+fadeItems.forEach(item => fadeObserver.observe(item));
