@@ -58,3 +58,23 @@ buttons.forEach(btn => {
     btn.style.transform = 'translateY(0)';
   });
 });
+const langButtons = document.querySelectorAll('[data-lang]');
+const transEls = document.querySelectorAll('[data-vi]');
+
+langButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const lang = btn.getAttribute('data-lang');
+
+    transEls.forEach(el => {
+      el.textContent = el.getAttribute(`data-${lang}`);
+    });
+
+    localStorage.setItem('lang', lang);
+  });
+});
+
+// Load lại ngôn ngữ đã chọn
+const savedLang = localStorage.getItem('lang') || 'vi';
+transEls.forEach(el => {
+  el.textContent = el.getAttribute(`data-${savedLang}`);
+});
