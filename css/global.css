@@ -381,3 +381,200 @@ section p {
   text-align: center;
   max-width: 720px;
 }
+/* ================================
+   NIGHTLIFE MENU – LUXURY POLISH
+   ================================ */
+
+/* Base menu */
+.main-nav a {
+  position: relative;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  padding: 8px 6px;
+  transition: color 0.3s ease;
+}
+
+/* Hover glow */
+.main-nav a:hover {
+  color: var(--gold);
+}
+
+/* Gold underline (luxury line) */
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    transparent
+  );
+  transition: width 0.35s ease;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* Active page – đứng trên đám đông */
+.main-nav a.active {
+  color: var(--gold);
+}
+
+.main-nav a.active::after {
+  width: 100%;
+}
+
+/* ================================
+   MENU HIERARCHY (CẤP BẬC)
+   ================================ */
+
+/* Party + Booking = trọng tâm */
+.main-nav a[href*="party"],
+.main-nav a[href*="booking"] {
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Gallery + Contact = secondary */
+.main-nav a[href*="gallery"],
+.main-nav a[href*="contact"] {
+  opacity: 0.75;
+}
+
+/* Trang chủ = neutral */
+.main-nav a[href*="index"] {
+  opacity: 0.6;
+}
+
+/* ================================
+   MOBILE MENU – DARK LUXURY
+   ================================ */
+
+.main-nav.open {
+  background: rgba(10,10,10,0.96);
+  backdrop-filter: blur(10px);
+}
+
+.main-nav.open a {
+  font-size: 16px;
+  padding: 14px 0;
+  letter-spacing: 0.15em;
+}
+/* =====================================
+   NIGHTLIFE MENU – PREMIUM LEVEL
+===================================== */
+
+.site-header {
+  position: relative;
+}
+
+/* Trục ánh sáng mờ phía sau menu */
+.site-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      60% 120% at 50% 0%,
+      rgba(197,160,77,0.12),
+      transparent 70%
+    );
+  pointer-events: none;
+}
+
+/* MENU BASE */
+.main-nav {
+  display: flex;
+  gap: 26px;
+}
+
+.main-nav a {
+  position: relative;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  padding: 10px 4px;
+  transition: all 0.35s ease;
+}
+
+/* Hover = sáng lên */
+.main-nav a:hover {
+  color: var(--gold);
+  text-shadow: 0 0 14px rgba(197,160,77,0.45);
+}
+
+/* Gold underline dạng club */
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    transparent
+  );
+  transform: translateX(-50%);
+  transition: width 0.4s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 140%;
+}
+
+/* Active = đứng vị trí trung tâm */
+.main-nav a.active {
+  color: var(--gold);
+  text-shadow: 0 0 18px rgba(197,160,77,0.6);
+}
+
+/* ================================
+   HIERARCHY – THỨ TỰ QUYỀN LỰC
+================================ */
+
+.main-nav a[href*="party"],
+.main-nav a[href*="booking"] {
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+}
+
+.main-nav a[href*="gallery"] {
+  opacity: 0.75;
+}
+
+.main-nav a[href*="contact"] {
+  opacity: 0.7;
+}
+
+/* ================================
+   MOBILE MENU – CLUB MODE
+================================ */
+
+.main-nav.open {
+  background: linear-gradient(
+    180deg,
+    rgba(8,8,8,0.98),
+    rgba(0,0,0,0.92)
+  );
+  backdrop-filter: blur(14px);
+}
+
+.main-nav.open a {
+  font-size: 17px;
+  padding: 16px 0;
+  letter-spacing: 0.22em;
+}
