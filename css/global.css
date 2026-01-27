@@ -655,3 +655,13 @@ section p {
   display: block;
   margin: 32px auto 0;
 }
+/* =====================================
+   FIX TEXT CENTER – PARTY CTA BUTTON
+===================================== */
+
+.party-types .btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
