@@ -8,51 +8,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* =====================================================
      1. HEADER SCROLL EFFECT
-     - Đổi nền header khi scroll xuống
-     - Tạo cảm giác sang & rõ header hơn
   ===================================================== */
   const header = document.querySelector('.site-header');
 
   if (header) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 60) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+      header.classList.toggle('scrolled', window.scrollY > 60);
     });
   }
 
-
   /* =====================================================
-     2. SECTION FADE-IN ON SCROLL
-     - Hiệu ứng xuất hiện nhẹ khi scroll
-     - Luxury: chậm – mượt – không phô
+     2. FADE-IN OBSERVER (SECTION + ITEMS)
+     - Dùng CHUNG 1 observer
+     - Áp dụng cho:
+       + section.fade
+       + .fade-item (ảnh / caption)
   ===================================================== */
-  const sections = document.querySelectorAll('section');
+  const fadeTargets = document.querySelectorAll('section, .fade-item');
 
-  if (sections.length) {
-    const observer = new IntersectionObserver(
+  if (fadeTargets.length) {
+    const fadeObserver = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('show');
+            fadeObserver.unobserve(entry.target); // chạy 1 lần cho sang
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.2 }
     );
 
-    sections.forEach(section => {
-      section.classList.add('fade');
-      observer.observe(section);
+    fadeTargets.forEach(el => {
+      el.classList.add('fade');
+      fadeObserver.observe(el);
     });
   }
 
-
   /* =====================================================
-     3. SMOOTH SCROLL (ANCHOR LINK)
-     - Chỉ áp dụng cho link dạng #id
+     3. SMOOTH SCROLL (ANCHOR)
   ===================================================== */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
@@ -64,30 +58,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
   /* =====================================================
-     4. BUTTON MICRO HOVER EFFECT
-     - Nhấc nút lên nhẹ khi hover
-     - Chỉ để cảm giác cao cấp, không animation gắt
+     4. BUTTON MICRO HOVER
   ===================================================== */
-  const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
-
-  buttons.forEach(btn => {
+  document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
     btn.addEventListener('mouseenter', () => {
       btn.style.transform = 'translateY(-2px)';
     });
-
     btn.addEventListener('mouseleave', () => {
       btn.style.transform = 'translateY(0)';
     });
   });
 
-
   /* =====================================================
      5. LANGUAGE SWITCH (VI / EN)
-     - Dựa trên data-vi & data-en
-     - Lưu ngôn ngữ vào localStorage
-     - Mặc định: Tiếng Việt
   ===================================================== */
   const langButtons = document.querySelectorAll('[data-lang]');
   const transEls = document.querySelectorAll('[data-vi][data-en]');
@@ -99,23 +83,16 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('lang', lang);
   }
 
-  // Click đổi ngôn ngữ
   langButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const lang = btn.getAttribute('data-lang');
-      setLanguage(lang);
+      setLanguage(btn.getAttribute('data-lang'));
     });
   });
 
-  // Load lại ngôn ngữ đã chọn
-  const savedLang = localStorage.getItem('lang') || 'vi';
-  setLanguage(savedLang);
-
+  setLanguage(localStorage.getItem('lang') || 'vi');
 
   /* =====================================================
      6. MOBILE MENU TOGGLE
-     - Bật / tắt menu khi bấm icon ☰
-     - Chỉ hoạt động khi đủ element
   ===================================================== */
   const menuToggle = document.querySelector('.menu-toggle');
   const mainNav = document.querySelector('.main-nav');
@@ -127,22 +104,3 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
-/* ===============================
-   Gallery Lazy Fade-in
-================================ */
-
-const fadeItems = document.querySelectorAll('.fade-item');
-
-const fadeObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        fadeObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.15 }
-);
-
-fadeItems.forEach(item => fadeObserver.observe(item));
