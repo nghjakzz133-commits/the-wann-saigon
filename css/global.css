@@ -580,3 +580,70 @@ section::before {
 section p {
   color: rgba(255,255,255,0.75);
 }
+/* =====================================
+   NIGHTLIFE BACKGROUND – VISIBLE DEPTH
+===================================== */
+
+body {
+  background:
+    radial-gradient(
+      1200px 600px at 50% -200px,
+      rgba(197,160,77,0.12),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      #0c0d10 0%,
+      #111318 45%,
+      #0c0d10 100%
+    );
+  color: #ffffff;
+}
+
+/* Section có ánh sáng rõ hơn */
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      80% 140% at 50% 0%,
+      rgba(197,160,77,0.10),
+      transparent 65%
+    );
+  pointer-events: none;
+}
+
+/* Party / Booking nổi rõ */
+.party-highlight,
+.booking-cta {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(197,160,77,0.08),
+      rgba(0,0,0,0.65)
+    );
+}
+
+/* About + Host dịu hơn */
+.about,
+.host {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.035),
+      rgba(0,0,0,0)
+    );
+}
+
+/* Ảnh nổi hẳn lên */
+.home-gallery img {
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.6),
+    0 0 0 1px rgba(255,255,255,0.04);
+}
+
+/* Text phụ sáng hơn */
+section p {
+  color: rgba(255,255,255,0.82);
+}
