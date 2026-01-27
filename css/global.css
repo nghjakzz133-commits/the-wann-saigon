@@ -326,3 +326,22 @@ section p {
   50%  { left: 130%; opacity: 0; }
   100% { left: 130%; opacity: 0; }
 }
+/* ===== LOGO SIZE – GLOBAL ===== */
+.logo img {
+  height: 48px;          /* desktop: tăng rõ rệt */
+  display: block;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .logo img {
+    height: 56px;        /* mobile: to hơn desktop */
+  }
+}
+.site-header .container {
+  height: 72px;          /* tăng nhẹ để chứa logo */
+  align-items: center;
+}
+.logo img {
+  filter: drop-shadow(0 0 8px rgba(255, 215, 150, 0.4));
+}
