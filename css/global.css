@@ -197,3 +197,26 @@ section p {
   position: relative;
   z-index: 2;
 }
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.lang-switch button {
+  background: none;
+  border: none;
+  color: var(--accent-gold);
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.lang-switch button:hover {
+  opacity: 1;
+}
