@@ -1292,5 +1292,5 @@ section p {
   filter: brightness(1.12) contrast(1.08) saturate(1.03) !important;
 }
 .hero-content {
-  transform: translateX(28px);
+  transform: translateX(32px);
 }
