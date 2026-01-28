@@ -1163,3 +1163,37 @@ section p {
 @keyframes titleReveal {
   to { opacity: 1; transform: translateY(0); }
 }
+/* =========================
+   HERO – CLEAN FINAL FIX
+   ========================= */
+
+.hero-video {
+  filter: brightness(0.45) contrast(1) saturate(0.85);
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.75),
+      rgba(0,0,0,.95)
+    );
+}
+
+.hero-content {
+  background: none;
+}
+
+.hero-title {
+  color: #e8d7a6;
+  text-shadow:
+    0 0 12px rgba(232,215,166,.25),
+    0 10px 40px rgba(0,0,0,.85);
+}
+
+/* Mobile gọn – sạch */
+@media (max-width: 768px) {
+  .hero-desc {
+    display: none;
+  }
+}
