@@ -1242,3 +1242,17 @@ section p {
 @media (max-width: 768px) {
   .hero-desc { display: none; }
 }
+.hero-title span:nth-child(1) {
+  font-size: .7em;
+  opacity: .6;
+  letter-spacing: .4em;
+}
+
+.hero-title span:nth-child(2) {
+  font-size: 1em;
+}
+
+.hero-title span:nth-child(3) {
+  font-size: 1.25em;
+  letter-spacing: .22em;
+}
