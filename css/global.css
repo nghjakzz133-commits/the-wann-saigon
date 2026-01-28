@@ -1,106 +1,252 @@
-/* ==============================
-   GLOBAL.CSS – LUXURY UI
-================================ */
+/* =====================================================
+   GLOBAL.CSS – THE WANN SAIGON
+   PURPOSE:
+   - Luxury / Nightlife / Clean
+   - Code gọn – dễ bảo trì – không chồng chéo
+===================================================== */
 
-/* ---------- HEADER ---------- */
+
+/* =====================================================
+   1. HEADER (FIXED – LUXURY)
+   NOTE:
+   - Header cố định
+   - Lang switch nằm cạnh menu (3 gạch)
+===================================================== */
+
 .site-header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 1000;
   background: rgba(15, 15, 15, 0.75);
   backdrop-filter: blur(10px);
 }
 
+.site-header.scrolled {
+  background: rgba(15, 15, 15, 0.95);
+}
+
 .site-header .container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 72px;
 }
 
-.logo {
-  font-family: var(--font-title);
-  font-size: 20px;
-  letter-spacing: 2px;
+/* Logo */
+.logo img {
+  height: 48px;
+  display: block;
+  filter: drop-shadow(0 0 8px rgba(255,215,150,.4));
 }
 
+/* Menu */
 .main-nav a {
   margin-left: 28px;
   font-size: 14px;
-  color: var(--text-sub);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.65);
+  position: relative;
 }
 
-.main-nav a:hover {
+.main-nav a:hover,
+.main-nav a.active {
   color: var(--accent-gold);
 }
 
-/* ---------- HERO ---------- */
+/* Menu underline */
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-gold),
+    transparent
+  );
+  transition: width .35s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
+}
+
+/* Lang switch – nằm cạnh menu */
+.lang-switch {
+  position: absolute;
+  right: 52px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.lang-switch button {
+  background: none;
+  border: none;
+  color: var(--accent-gold);
+  font-size: 13px;
+  opacity: .8;
+  cursor: pointer;
+}
+
+.lang-switch button:hover {
+  opacity: 1;
+}
+
+/* Menu toggle (mobile) */
+.menu-toggle {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .main-nav { display: none; }
+}
+
+
+/* =====================================================
+   2. HERO (FINAL – CLEAN – NIGHTLIFE)
+   NOTE:
+   - Video là nền sống
+   - Overlay trung tính (không ám vàng)
+   - Chữ 2 màu: GOLD + OFF-WHITE
+===================================================== */
+
 .hero {
-  height: 100vh;
-  background: url('../assets/images/hero.jpg') center/cover no-repeat;
   position: relative;
+  min-height: 100vh;
+  padding-top: 72px; /* trừ header */
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #000;
+  overflow: hidden;
 }
 
+/* Video */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(1.12) contrast(1.08) saturate(1.03);
+  z-index: 0;
+}
+
+/* Overlay – trung tính */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.95)
+  );
+  z-index: 1;
 }
 
+/* Content */
 .hero-content {
   position: relative;
+  z-index: 2;
   text-align: center;
-  max-width: 720px;
   padding: 0 24px;
 }
 
-.hero h1 {
-  font-family: var(--font-title);
-  font-size: 56px;
-  letter-spacing: 4px;
-  margin-bottom: 16px;
+/* Title */
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(42px, 9vw, 92px);
+  letter-spacing: .28em;
+  text-transform: uppercase;
 }
 
+/* THE + WANN */
+.hero-title span:nth-child(1),
+.hero-title span:nth-child(2) {
+  color: #e6d39a;
+}
+
+/* SAIGON */
+.hero-title span:nth-child(3) {
+  color: #f5f5f0;
+  font-size: 1.25em;
+  letter-spacing: .22em;
+  text-shadow:
+    0 0 6px rgba(255,255,255,.35),
+    0 12px 40px rgba(0,0,0,.9);
+}
+
+/* Tagline */
 .tagline {
-  color: var(--accent-gold);
-  letter-spacing: 3px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 13px;
+  letter-spacing: .36em;
+  text-transform: uppercase;
+  color: rgba(197,160,77,.85);
 }
 
+/* Description */
 .hero-desc {
-  color: var(--text-sub);
-  font-size: 16px;
-  margin-bottom: 36px;
+  margin-top: 22px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,.65);
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* ---------- BUTTON ---------- */
+/* CTA */
+.hero-cta {
+  margin-top: 56px;
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+}
+
 .btn-primary {
-  display: inline-block;
-  padding: 14px 32px;
-  background: var(--accent-gold);
-  color: #000;
-  font-size: 14px;
-  letter-spacing: 1px;
-  margin: 0 8px;
+  padding: 14px 34px;
+  border: 1px solid var(--accent-gold);
+  background: transparent;
+  color: var(--accent-gold);
+  letter-spacing: .18em;
 }
 
 .btn-secondary {
-  display: inline-block;
-  padding: 14px 32px;
-  border: 1px solid var(--accent-gold);
-  color: var(--accent-gold);
-  font-size: 14px;
-  letter-spacing: 1px;
-  margin: 0 8px;
+  opacity: .5;
+  border: none;
 }
 
-/* ---------- SECTION ---------- */
+/* Mobile hero clean */
+@media (max-width: 768px) {
+  .hero-desc { display: none; }
+}
+
+
+/* =====================================================
+   3. SECTIONS – BASE
+   NOTE: dùng chung cho toàn site
+===================================================== */
+
 section {
   padding: 120px 0;
+  position: relative;
 }
 
 section h2 {
@@ -114,1214 +260,22 @@ section p {
   max-width: 720px;
   margin: 0 auto;
   text-align: center;
-  color: var(--text-sub);
+  color: rgba(255,255,255,.8);
 }
 
-/* ---------- PARTY ---------- */
-.party-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-  margin-top: 48px;
+@media (max-width: 768px) {
+  section { padding: 80px 0; }
 }
 
-.party-card {
-  padding: 48px 24px;
-  border: 1px solid rgba(255,255,255,0.08);
-  text-align: center;
-  font-family: var(--font-title);
-  letter-spacing: 1px;
-}
 
-/* ---------- BOOKING ---------- */
-.booking-buttons {
-  margin-top: 32px;
-  text-align: center;
-}
+/* =====================================================
+   4. FOOTER
+===================================================== */
 
-/* ---------- FOOTER ---------- */
 .site-footer {
-  background: var(--bg-soft);
   padding: 48px 0;
   text-align: center;
   font-size: 14px;
-  color: var(--text-sub);
-}
-
-/* ---------- MOBILE ---------- */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 38px;
-  }
-
-  .main-nav {
-    display: none;
-  }
-
-  section {
-    padding: 80px 0;
-  }
-}
-/* JS animation support */
-.fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.site-header.scrolled {
-  background: rgba(15, 15, 15, 0.95);
-}
-.hero-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-.site-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.lang-switch {
-  display: flex;
-  gap: 12px;
-  font-size: 13px;
-}
-
-.lang-switch button {
-  background: none;
-  border: none;
-  color: var(--accent-gold);
-  cursor: pointer;
-  opacity: 0.8;
-}
-
-.lang-switch button:hover {
-  opacity: 1;
-}
-.menu-toggle {
-  display: none;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-}
-@media (max-width: 768px) {
-  .main-nav {
-    position: absolute;
-    top: 72px;
-    right: 0;
-    background: rgba(15,15,15,0.95);
-    padding: 24px;
-    display: none;
-  }
-
-  .main-nav.open {
-    display: block;
-  }
-
-  .main-nav a {
-    display: block;
-    margin: 16px 0;
-  }
-}
-.logo img {
-  height: 36px;
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .logo img {
-    height: 30px;
-  }
-}
-.site-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.site-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 64px;
-}
-.logo img {
-  height: 34px;
-}
-
-@media (max-width: 768px) {
-  .logo img {
-    height: 32px;
-  }
-}
-.lang-switch {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.menu-toggle {
-  margin-left: 12px;
-}
-.logo {
-  position: relative;
-  display: inline-block;
-}
-
-.logo img {
-  display: block;
-  height: 34px; /* chỉnh theo ý */
-}
-
-/* ánh sáng quét */
-.logo.shimmer::after {
-  content: "";
-  position: absolute;
-  top: -60%;
-  left: -80%;
-  width: 60%;
-  height: 220%;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255, 215, 150, 0.6) 50%,
-    transparent 100%
-  );
-  transform: rotate(20deg);
-  animation: shimmer 4.5s infinite;
-  pointer-events: none;
-}
-
-@keyframes shimmer {
-  0%   { left: -80%; opacity: 0; }
-  20%  { opacity: 1; }
-  50%  { left: 130%; opacity: 0; }
-  100% { left: 130%; opacity: 0; }
-}
-/* ===== LOGO SIZE – GLOBAL ===== */
-.logo img {
-  height: 48px;          /* desktop: tăng rõ rệt */
-  display: block;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .logo img {
-    height: 56px;        /* mobile: to hơn desktop */
-  }
-}
-.site-header .container {
-  height: 72px;          /* tăng nhẹ để chứa logo */
-  align-items: center;
-}
-.logo img {
-  filter: drop-shadow(0 0 8px rgba(255, 215, 150, 0.4));
-}
-.party-highlight,
-.booking-cta {
-  text-align: center;
-}
-
-.party-highlight .container,
-.booking-cta .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.party-highlight h2,
-.party-highlight p {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.party-highlight .btn-primary {
-  margin-top: 24px;
-}
-.booking-buttons {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 32px;
-}
-
-.booking-buttons a {
-  min-width: 140px;
-  text-align: center;
-}
-.booking-cta h2 {
-  text-align: center;
-  max-width: 720px;
-}
-/* ================================
-   NIGHTLIFE MENU – LUXURY POLISH
-   ================================ */
-
-/* Base menu */
-.main-nav a {
-  position: relative;
-  font-family: var(--font-heading);
-  font-size: 14px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.65);
-  padding: 8px 6px;
-  transition: color 0.3s ease;
-}
-
-/* Hover glow */
-.main-nav a:hover {
-  color: var(--gold);
-}
-
-/* Gold underline (luxury line) */
-.main-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0%;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--gold),
-    transparent
-  );
-  transition: width 0.35s ease;
-}
-
-.main-nav a:hover::after {
-  width: 100%;
-}
-
-/* Active page – đứng trên đám đông */
-.main-nav a.active {
-  color: var(--gold);
-}
-
-.main-nav a.active::after {
-  width: 100%;
-}
-
-/* ===============================
-   HOME – HORIZONTAL IMAGE SCROLL
-================================ */
-.horizontal-scroll {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding: 24px 0;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-.horizontal-scroll::-webkit-scrollbar {
-  display: none; /* ẩn scrollbar cho sang */
-}
-
-.horizontal-scroll img {
-  flex: 0 0 auto;
-  width: 320px;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 12px;
-  scroll-snap-align: center;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-/* hover nhẹ desktop */
-@media (hover: hover) {
-  .horizontal-scroll img:hover {
-    transform: scale(1.04);
-  }
-}
-
-/* Mobile tối ưu */
-@media (max-width: 768px) {
-  .horizontal-scroll img {
-    width: 260px;
-    height: 360px;
-  }
-}
-/* ==============================
-   HORIZONTAL SCROLL – LUXURY
-================================ */
-
-.horizontal-scroll {
-  display: flex;
-  gap: 24px;
-  overflow-x: auto;
-  padding: 8px 4px 16px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-.horizontal-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-.horizontal-scroll img {
-  flex: 0 0 auto;
-  width: 78vw;              /* mobile: to – đã mắt */
-  max-width: 420px;         /* desktop: giữ luxury */
-  height: 520px;
-  object-fit: cover;
-  border-radius: 14px;
-  scroll-snap-align: center;
-  transition: transform .6s ease, opacity .6s ease;
-  opacity: 0.9;
-}
-
-/* ảnh đang ở trung tâm */
-.horizontal-scroll img:hover {
-  transform: scale(1.02);
-  opacity: 1;
-}
-
-/* desktop */
-@media (min-width: 768px) {
-  .horizontal-scroll img {
-    width: 360px;
-    height: 480px;
-  }
-}
-/* =====================================
-   NIGHTLIFE BACKGROUND – LUXURY DEPTH
-   Dùng cho lounge / party / nightlife
-===================================== */
-
-/* Nền tổng thể */
-body {
-  background: linear-gradient(
-    180deg,
-    #0b0b0c 0%,
-    #0f1012 45%,
-    #0b0b0c 100%
-  );
-  color: #ffffff;
-}
-
-/* Layer ánh sáng rất nhẹ cho section */
-section {
-  position: relative;
-}
-
-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(
-      70% 120% at 50% 0%,
-      rgba(197,160,77,0.06),
-      transparent 70%
-    );
-  pointer-events: none;
-}
-
-/* Section tối hơn để tạo nhịp điệu */
-.party-highlight,
-.booking-cta {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,0.35),
-      rgba(0,0,0,0.65)
-    );
-}
-
-/* Section dịu để nghỉ mắt */
-.about,
-.host {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.02),
-      rgba(0,0,0,0)
-    );
-}
-
-/* Gallery nổi hơn */
-.home-gallery img {
-  box-shadow:
-    0 18px 40px rgba(0,0,0,0.45);
-}
-
-/* Text phụ dịu hơn */
-section p {
-  color: rgba(255,255,255,0.75);
-}
-/* =====================================
-   NIGHTLIFE BACKGROUND – VISIBLE DEPTH
-===================================== */
-
-body {
-  background:
-    radial-gradient(
-      1200px 600px at 50% -200px,
-      rgba(197,160,77,0.12),
-      transparent 60%
-    ),
-    linear-gradient(
-      180deg,
-      #0c0d10 0%,
-      #111318 45%,
-      #0c0d10 100%
-    );
-  color: #ffffff;
-}
-
-/* Section có ánh sáng rõ hơn */
-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(
-      80% 140% at 50% 0%,
-      rgba(197,160,77,0.10),
-      transparent 65%
-    );
-  pointer-events: none;
-}
-
-/* Party / Booking nổi rõ */
-.party-highlight,
-.booking-cta {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(197,160,77,0.08),
-      rgba(0,0,0,0.65)
-    );
-}
-
-/* About + Host dịu hơn */
-.about,
-.host {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.035),
-      rgba(0,0,0,0)
-    );
-}
-
-/* Ảnh nổi hẳn lên */
-.home-gallery img {
-  box-shadow:
-    0 25px 60px rgba(0,0,0,0.6),
-    0 0 0 1px rgba(255,255,255,0.04);
-}
-
-/* Text phụ sáng hơn */
-section p {
-  color: rgba(255,255,255,0.82);
-}
-/* =====================================
-   CENTER CTA – PARTY SECTION
-===================================== */
-
-.party-types .btn-primary {
-  display: block;
-  margin: 32px auto 0;
-}
-/* =====================================
-   FIX TEXT CENTER – PARTY CTA BUTTON
-===================================== */
-
-.party-types .btn-primary {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.hero h1 {
-  font-family: var(--font-title);
-  font-size: 56px;
-  letter-spacing: 0.18em;
-  color: #f5f5f5;
-  text-shadow:
-    0 6px 30px rgba(0,0,0,0.65),
-    0 0 18px rgba(197,160,77,0.35);
-}
-.hero-overlay {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,0.65),
-      rgba(0,0,0,0.85)
-    );
-}
-.tagline {
-  margin-top: 18px;
-  font-size: 14px;
-  letter-spacing: 0.32em;
-  opacity: 0.85;
-}
-.hero-cta {
-  margin-top: 56px;
-}
-/* ================================
-   EUROPEAN CLUB HERO – LUXURY MODE
-================================ */
-
-/* Nền tối sâu, lạnh */
-.hero {
-  background-color: #050505;
-}
-
-/* Video trầm – mờ – cinematic */
-.hero-video {
-  filter: brightness(0.55) contrast(1.05) saturate(0.85);
-}
-
-/* Overlay kiểu club châu Âu */
-.hero-overlay {
-  background:
-    radial-gradient(
-      80% 60% at 50% 40%,
-      rgba(197,160,77,0.12),
-      rgba(0,0,0,0.92)
-    );
-}
-
-/* TITLE – sang kiểu EU */
-.hero h1 {
-  font-family: var(--font-title);
-  font-size: 56px;
-  letter-spacing: 0.22em;
-  color: #f2f2f2;
-  text-shadow:
-    0 8px 40px rgba(0,0,0,0.75),
-    0 0 24px rgba(197,160,77,0.35);
-}
-
-/* Tagline nhỏ – lạnh – tinh */
-.tagline {
-  margin-top: 22px;
-  font-size: 13px;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  color: rgba(197,160,77,0.85);
-}
-
-/* Mô tả chìm – không kể lể */
-.hero-desc {
-  margin-top: 22px;
-  font-size: 15px;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.65);
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* CTA trễ – có khoảng thở */
-.hero-cta {
-  margin-top: 64px;
-}
-.hero-title {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.hero-title span {
-  font-size: 54px;
-  letter-spacing: 0.28em;
-  opacity: 0.85;
-}
-
-.hero-title .accent {
-  color: var(--accent-gold);
-  letter-spacing: 0.35em;
-  text-shadow: 0 0 28px rgba(197,160,77,0.45);
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      120deg,
-      transparent 30%,
-      rgba(197,160,77,0.08),
-      transparent 70%
-    );
-  mix-blend-mode: screen;
-  pointer-events: none;
-}
-.hero-cta {
-  display: flex;
-  gap: 32px;
-  justify-content: center;
-}
-
-.hero-cta .btn-primary {
-  background: transparent;
-  border: 1px solid var(--accent-gold);
-  color: var(--accent-gold);
-}
-
-.hero-cta .btn-secondary {
-  opacity: 0.5;
-  border: none;
-}
-/* ===== FIX HERO TITLE ALIGN ===== */
-.hero-title {
-  display: flex;
-  flex-direction: column;      /* xếp dọc */
-  align-items: center;
-  line-height: 1.05;           /* khóa nhịp chữ */
-}
-
-.hero-title span {
-  display: block;
-  text-align: center;
-}
-
-/* tinh chỉnh khoảng cách từng dòng */
-.hero-title span:nth-child(1) {
-  margin-bottom: 6px;
-}
-
-.hero-title span:nth-child(2) {
-  margin-bottom: 10px;
-}
-/* =====================================
-   EURO CLUB TYPOGRAPHY – LUXURY MODE
-   ===================================== */
-
-/* ===== HEADING (H1–H3) ===== */
-h1, h2, h3,
-.hero-title span {
-  color: transparent;
-  background: linear-gradient(
-    180deg,
-    #f5e6c8 0%,
-    #d4b06a 35%,
-    #a9823f 65%,
-    #7a5a28 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  letter-spacing: 0.04em;
-  text-shadow:
-    0 2px 12px rgba(0,0,0,0.45),
-    0 0 18px rgba(212,176,106,0.25);
-}
-
-/* Hero title spacing sang hơn */
-.hero-title span {
-  display: block;
-  line-height: 1.05;
-}
-
-/* ===== SUBTITLE / TAGLINE ===== */
-.tagline {
-  color: #c9ab6a;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  opacity: 0.9;
-}
-
-/* ===== BODY TEXT ===== */
-p,
-.hero-desc,
-section p {
-  color: rgba(220, 210, 185, 0.85);
-  text-shadow: 0 1px 6px rgba(0,0,0,0.6);
-}
-
-/* ===== CAPTION / SMALL TEXT ===== */
-.caption {
-  color: rgba(190, 165, 110, 0.85);
-  font-style: italic;
-  letter-spacing: 0.08em;
-}
-
-/* ===== PARTY CARD TEXT ===== */
-.party-card {
-  color: rgba(230, 215, 180, 0.9);
-  text-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-/* ===== BUTTON TEXT ===== */
-.btn-primary,
-.btn-secondary {
-  letter-spacing: 0.18em;
-}
-.hero::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at center, rgba(255,200,120,.25), transparent 60%),
-    linear-gradient(to bottom, rgba(0,0,0,.65), rgba(0,0,0,.85));
-}
-.hero-title {
-  letter-spacing: .18em;
-  text-shadow: 0 10px 30px rgba(0,0,0,.6);
-}
-.btn-primary {
-  box-shadow: 0 0 30px rgba(200,160,90,.35);
-}
-/* ===== HERO BASE ===== */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-  background: #000;
-}
-
-/* ===== VIDEO ===== */
-.hero-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.08);
-  filter: contrast(1.15) saturate(1.25);
-  animation: heroZoom 6s ease forwards;
-}
-
-/* ===== OVERLAY ĐIỆN ẢNH ===== */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 50% 40%, rgba(255,200,120,.35), transparent 55%),
-    linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.9));
-  z-index: 1;
-}
-
-/* ===== CONTENT ===== */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 0 20px;
-  animation: fadeUp 1.2s ease forwards;
-}
-
-/* ===== TITLE ===== */
-.hero-title {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: clamp(44px, 9vw, 96px);
-  letter-spacing: .32em;
-  text-transform: uppercase;
-  color: var(--gold, #c9a24d);
-  text-shadow:
-    0 0 30px rgba(200,160,90,.35),
-    0 15px 60px rgba(0,0,0,.85);
-}
-
-.hero-title span {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: titleReveal .9s ease forwards;
-}
-
-.hero-title span:nth-child(1) { animation-delay: .2s; }
-.hero-title span:nth-child(2) { animation-delay: .4s; }
-.hero-title span:nth-child(3) { animation-delay: .6s; }
-
-/* ===== TAGLINE ===== */
-.tagline {
-  margin-top: 24px;
-  letter-spacing: .35em;
-  opacity: .85;
-}
-
-/* ===== DESC ===== */
-.hero-desc {
-  max-width: 680px;
-  margin: 20px auto 0;
-  opacity: .8;
-}
-
-/* ===== CTA ===== */
-.hero-cta {
-  margin-top: 40px;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.btn-primary {
-  padding: 14px 34px;
-  background: linear-gradient(135deg, #e6c06b, #b08a3c);
-  color: #000;
-  font-weight: 600;
-  box-shadow:
-    0 0 35px rgba(230,192,107,.45),
-    0 15px 50px rgba(0,0,0,.6);
-  animation: pulse 2.2s infinite;
-}
-
-.btn-secondary {
-  opacity: .7;
-}
-
-/* ===== ANIMATIONS ===== */
-@keyframes heroZoom {
-  from { transform: scale(1.12); }
-  to   { transform: scale(1); }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes titleReveal {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-  0%,100% { box-shadow: 0 0 25px rgba(230,192,107,.4); }
-  50%     { box-shadow: 0 0 45px rgba(230,192,107,.7); }
-}
-.hero-overlay {
-  background:
-    radial-gradient(
-      circle at 50% 38%,
-      rgba(255,215,150,.22),
-      rgba(0,0,0,0) 55%
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,.35),
-      rgba(0,0,0,.88)
-    );
-}
-.hero-video {
-  filter: contrast(1.05) saturate(1.08);
-}
-.hero-content {
-  background: radial-gradient(
-    circle at center,
-    rgba(0,0,0,.25),
-    rgba(0,0,0,0) 70%
-  );
-}
-/* =================================================
-   HERO – FINAL OVERRIDE (CLEAN / LUXURY / NIGHTLIFE)
-   Chỉ ghi đè HERO – phần còn lại GIỮ NGUYÊN
-================================================= */
-
-.hero {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-  background: #000;
-}
-
-/* VIDEO */
-.hero-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.06);
-  filter: brightness(0.6) contrast(1.05) saturate(1.05);
-  animation: heroZoom 6s ease forwards;
-  z-index: 0;
-}
-
-/* OVERLAY – SẠCH, KHÔNG ĐỎ */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(
-      circle at 50% 38%,
-      rgba(255,215,150,.18),
-      rgba(0,0,0,0) 55%
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,.35),
-      rgba(0,0,0,.9)
-    );
-  z-index: 1;
-}
-
-/* CONTENT */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 0 20px;
-  background: radial-gradient(
-    circle at center,
-    rgba(0,0,0,.18),
-    rgba(0,0,0,0) 68%
-  );
-}
-
-/* TITLE */
-.hero-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  font-size: clamp(42px, 9vw, 92px);
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  color: #f5e6c8;
-  text-shadow:
-    0 8px 40px rgba(0,0,0,.75),
-    0 0 24px rgba(197,160,77,.35);
-}
-
-.hero-title span {
-  opacity: 0;
-  transform: translateY(24px);
-  animation: titleReveal .9s ease forwards;
-}
-
-.hero-title span:nth-child(1){animation-delay:.2s}
-.hero-title span:nth-child(2){animation-delay:.4s}
-.hero-title span:nth-child(3){animation-delay:.6s}
-
-/* TAGLINE */
-.tagline {
-  margin-top: 22px;
-  font-size: 13px;
-  letter-spacing: .36em;
-  text-transform: uppercase;
-  color: rgba(197,160,77,.85);
-}
-
-/* DESC */
-.hero-desc {
-  margin-top: 22px;
-  font-size: 15px;
-  line-height: 1.8;
-  color: rgba(255,255,255,.65);
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* CTA */
-.hero-cta {
-  margin-top: 60px;
-  display: flex;
-  gap: 28px;
-  justify-content: center;
-}
-
-.hero-cta .btn-primary {
-  background: transparent;
-  border: 1px solid #c9a24d;
-  color: #c9a24d;
-  letter-spacing: .18em;
-}
-
-/* ANIMATION */
-@keyframes heroZoom {
-  from { transform: scale(1.1); }
-  to   { transform: scale(1); }
-}
-
-@keyframes titleReveal {
-  to { opacity: 1; transform: translateY(0); }
-}
-/* =========================
-   HERO – CLEAN FINAL FIX
-   ========================= */
-
-.hero-video {
-  filter: brightness(0.45) contrast(1) saturate(0.85);
-}
-
-.hero-overlay {
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,.75),
-      rgba(0,0,0,.95)
-    );
-}
-
-.hero-content {
-  background: none;
-}
-
-.hero-title {
-  color: #e8d7a6;
-  text-shadow:
-    0 0 12px rgba(232,215,166,.25),
-    0 10px 40px rgba(0,0,0,.85);
-}
-
-/* Mobile gọn – sạch */
-@media (max-width: 768px) {
-  .hero-desc {
-    display: none;
-  }
-}
-/* =========================
-   HERO – ANTI YELLOW FIX
-   ========================= */
-
-/* Tắt mọi ánh sáng nền */
-.hero::before,
-.hero::after,
-.hero-content::before,
-.hero-content::after {
-  display: none !important;
-}
-
-/* Overlay thuần đen – không màu */
-.hero-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,.78),
-    rgba(0,0,0,.96)
-  ) !important;
-}
-
-/* Không cho hero-content nhuộm màu */
-.hero-content {
-  background: none !important;
-}
-
-/* Video trả về trung tính */
-.hero-video {
-  filter: brightness(0.5) contrast(1.05) saturate(0.95) !important;
-}
-
-/* VÀNG CHỈ DÙNG CHO CHỮ */
-.hero-title {
-  color: #e6d39a !important;
-  background: none !important;
-  -webkit-background-clip: initial !important;
-  text-shadow:
-    0 0 10px rgba(230,211,154,.25),
-    0 12px 40px rgba(0,0,0,.9) !important;
-}
-
-/* Mobile gọn – sạch */
-@media (max-width: 768px) {
-  .hero-desc { display: none; }
-}
-.hero-title span:nth-child(1) {
-  font-size: .7em;
-  opacity: .6;
-  letter-spacing: .4em;
-}
-
-.hero-title span:nth-child(2) {
-  font-size: 1em;
-}
-
-.hero-title span:nth-child(3) {
-  font-size: 1.25em;
-  letter-spacing: .22em;
-}
-.hero-video {
-  filter: brightness(0.85) contrast(1.05) saturate(1) !important;
-}
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 72px; /* đúng chiều cao header */
-  box-sizing: border-box;
-}
-
-.hero-content {
-  transform: translateY(-36px); /* kéo lên lại đúng tâm */
-}
-.hero-title span:nth-child(1),
-.hero-title span:nth-child(2) {
-  color: #e6d39a;
-}
-
-.hero-title span:nth-child(3) {
-  color: #f5f5f0;
-  text-shadow:
-    0 0 6px rgba(255,255,255,.35),
-    0 12px 40px rgba(0,0,0,.9);
-}
-.hero {
-  padding-top: 72px;              /* đúng chiều cao header */
-}
-
-.hero-content {
-  transform: translateY(-36px);   /* kéo hero lên đúng trục mắt */
-}
-.hero-video {
-  filter: brightness(1.12) contrast(1.08) saturate(1.03) !important;
-}
-.hero-content {
-  transform: translateX(32px);
-}
-/* HERO – OPTICAL CENTER (FIX LỆCH NGANG) */
-.hero {
-  display: grid;
-  grid-template-columns: 56px 1fr 56px; /* bù logo + mảng chéo bên trái */
-}
-
-.hero-content {
-  grid-column: 2;
-  transform: none !important;
-}
-/* =========================
-   HEADER – LANG SWITCH ALIGN
-   ========================= */
-
-.site-header .container {
-  position: relative;
-}
-
-/* Đẩy cụm VI | EN sang phải, cạnh menu */
-.lang-switch {
-  position: absolute;
-  right: 52px;          /* sát nút menu */
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* Menu icon giữ nguyên góc phải */
-.menu-toggle {
-  position: relative;
-  z-index: 2;
+  color: rgba(255,255,255,.6);
+  background: #0b0b0c;
 }
