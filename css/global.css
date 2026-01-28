@@ -750,3 +750,50 @@ section p {
 .hero-cta {
   margin-top: 64px;
 }
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hero-title span {
+  font-size: 54px;
+  letter-spacing: 0.28em;
+  opacity: 0.85;
+}
+
+.hero-title .accent {
+  color: var(--accent-gold);
+  letter-spacing: 0.35em;
+  text-shadow: 0 0 28px rgba(197,160,77,0.45);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(197,160,77,0.08),
+      transparent 70%
+    );
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+.hero-cta {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+}
+
+.hero-cta .btn-primary {
+  background: transparent;
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.hero-cta .btn-secondary {
+  opacity: 0.5;
+  border: none;
+}
