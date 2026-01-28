@@ -279,3 +279,51 @@ section p {
   color: rgba(255,255,255,.6);
   background: #0b0b0c;
 }
+/* =================================================
+   STICKY CTA – MOBILE ONLY
+   NOTE:
+   - Hiện khi scroll xuống
+   - Ẩn ở hero
+================================================= */
+
+.sticky-cta {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  display: none;
+  gap: 12px;
+  padding: 10px;
+  background: rgba(15,15,15,.85);
+  backdrop-filter: blur(10px);
+  border-radius: 999px;
+  z-index: 999;
+}
+
+/* Buttons */
+.sticky-cta a {
+  padding: 12px 18px;
+  font-size: 13px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.sticky-cta .cta-primary {
+  background: var(--accent-gold);
+  color: #000;
+  border-radius: 999px;
+}
+
+.sticky-cta .cta-secondary {
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  border-radius: 999px;
+}
+
+/* Mobile only */
+@media (max-width: 768px) {
+  .sticky-cta {
+    display: flex;
+  }
+}
