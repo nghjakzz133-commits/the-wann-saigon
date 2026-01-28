@@ -1304,3 +1304,24 @@ section p {
   grid-column: 2;
   transform: none !important;
 }
+/* =========================
+   HEADER – LANG SWITCH ALIGN
+   ========================= */
+
+.site-header .container {
+  position: relative;
+}
+
+/* Đẩy cụm VI | EN sang phải, cạnh menu */
+.lang-switch {
+  position: absolute;
+  right: 52px;          /* sát nút menu */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Menu icon giữ nguyên góc phải */
+.menu-toggle {
+  position: relative;
+  z-index: 2;
+}
