@@ -797,3 +797,24 @@ section p {
   opacity: 0.5;
   border: none;
 }
+/* ===== FIX HERO TITLE ALIGN ===== */
+.hero-title {
+  display: flex;
+  flex-direction: column;      /* xếp dọc */
+  align-items: center;
+  line-height: 1.05;           /* khóa nhịp chữ */
+}
+
+.hero-title span {
+  display: block;
+  text-align: center;
+}
+
+/* tinh chỉnh khoảng cách từng dòng */
+.hero-title span:nth-child(1) {
+  margin-bottom: 6px;
+}
+
+.hero-title span:nth-child(2) {
+  margin-bottom: 10px;
+}
