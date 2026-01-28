@@ -1291,3 +1291,6 @@ section p {
 .hero-video {
   filter: brightness(1.12) contrast(1.08) saturate(1.03) !important;
 }
+.hero-content {
+  transform: translateX(24px);
+}
