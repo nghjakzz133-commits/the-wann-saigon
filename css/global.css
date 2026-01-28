@@ -1281,3 +1281,13 @@ section p {
     0 0 6px rgba(255,255,255,.35),
     0 12px 40px rgba(0,0,0,.9);
 }
+.hero {
+  padding-top: 72px;              /* đúng chiều cao header */
+}
+
+.hero-content {
+  transform: translateY(-36px);   /* kéo hero lên đúng trục mắt */
+}
+.hero-video {
+  filter: brightness(1.12) contrast(1.08) saturate(1.03) !important;
+}
