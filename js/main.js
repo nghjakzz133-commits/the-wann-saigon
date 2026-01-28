@@ -19,10 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* =====================================================
      2. FADE-IN OBSERVER (SECTION + ITEMS)
-     - Dùng CHUNG 1 observer
-     - Áp dụng cho:
-       + section.fade
-       + .fade-item (ảnh / caption)
+     NOTE:
+     - Dùng chung 1 observer
+     - Chạy 1 lần cho sang
   ===================================================== */
   const fadeTargets = document.querySelectorAll('section, .fade-item');
 
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('show');
-            fadeObserver.unobserve(entry.target); // chạy 1 lần cho sang
+            fadeObserver.unobserve(entry.target);
           }
         });
       },
@@ -103,10 +102,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* =====================================================
+     7. HERO TITLE DELAY (NHẸ)
+  ===================================================== */
+  const heroTitle = document.querySelector('.hero-title');
+  if (heroTitle) {
+    setTimeout(() => heroTitle.classList.add('show'), 300);
+  }
+
+  /* =====================================================
+     8. STICKY CTA – MOBILE (MICRO EFFECT)
+     NOTE:
+     - Chỉ hiện khi scroll qua hero
+     - Dùng class `.show` để animate (CSS control)
+  ===================================================== */
+  const stickyCTA = document.querySelector('.sticky-cta');
+  const heroSection = document.querySelector('.hero');
+
+  if (stickyCTA && heroSection) {
+    window.addEventListener('scroll', () => {
+      const heroBottom = heroSection.getBoundingClientRect().bottom;
+
+      if (heroBottom < 0) {
+        stickyCTA.classList.add('show');
+      } else {
+        stickyCTA.classList.remove('show');
+      }
+    });
+  }
+
 });
-/* ==============================
-   HORIZONTAL DRAG SCROLL
-================================ */
+
+/* =====================================================
+   9. HORIZONTAL DRAG SCROLL (DESKTOP)
+   NOTE:
+   - Không ảnh hưởng mobile
+===================================================== */
 document.querySelectorAll('.horizontal-scroll').forEach(gallery => {
   let isDown = false;
   let startX;
@@ -133,27 +164,7 @@ document.querySelectorAll('.horizontal-scroll').forEach(gallery => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - gallery.offsetLeft;
-    const walk = (x - startX) * 1.6; // độ đà
+    const walk = (x - startX) * 1.6;
     gallery.scrollLeft = scrollLeft - walk;
   });
 });
-const heroTitle = document.querySelector('.hero-title');
-if (heroTitle) {
-  setTimeout(() => heroTitle.classList.add('show'), 300);
-}
-// Sticky CTA – show after hero
-const stickyCTA = document.querySelector('.sticky-cta');
-const heroSection = document.querySelector('.hero');
-
-if (stickyCTA && heroSection) {
-  window.addEventListener('scroll', () => {
-    const heroBottom = heroSection.getBoundingClientRect().bottom;
-    if (heroBottom < 0) {
-      stickyCTA.style.opacity = '1';
-      stickyCTA.style.pointerEvents = 'auto';
-    } else {
-      stickyCTA.style.opacity = '0';
-      stickyCTA.style.pointerEvents = 'none';
-    }
-  });
-}
