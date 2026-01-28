@@ -141,3 +141,19 @@ const heroTitle = document.querySelector('.hero-title');
 if (heroTitle) {
   setTimeout(() => heroTitle.classList.add('show'), 300);
 }
+// Sticky CTA – show after hero
+const stickyCTA = document.querySelector('.sticky-cta');
+const heroSection = document.querySelector('.hero');
+
+if (stickyCTA && heroSection) {
+  window.addEventListener('scroll', () => {
+    const heroBottom = heroSection.getBoundingClientRect().bottom;
+    if (heroBottom < 0) {
+      stickyCTA.style.opacity = '1';
+      stickyCTA.style.pointerEvents = 'auto';
+    } else {
+      stickyCTA.style.opacity = '0';
+      stickyCTA.style.pointerEvents = 'none';
+    }
+  });
+}
