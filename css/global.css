@@ -818,3 +818,66 @@ section p {
 .hero-title span:nth-child(2) {
   margin-bottom: 10px;
 }
+/* =====================================
+   EURO CLUB TYPOGRAPHY – LUXURY MODE
+   ===================================== */
+
+/* ===== HEADING (H1–H3) ===== */
+h1, h2, h3,
+.hero-title span {
+  color: transparent;
+  background: linear-gradient(
+    180deg,
+    #f5e6c8 0%,
+    #d4b06a 35%,
+    #a9823f 65%,
+    #7a5a28 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  letter-spacing: 0.04em;
+  text-shadow:
+    0 2px 12px rgba(0,0,0,0.45),
+    0 0 18px rgba(212,176,106,0.25);
+}
+
+/* Hero title spacing sang hơn */
+.hero-title span {
+  display: block;
+  line-height: 1.05;
+}
+
+/* ===== SUBTITLE / TAGLINE ===== */
+.tagline {
+  color: #c9ab6a;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* ===== BODY TEXT ===== */
+p,
+.hero-desc,
+section p {
+  color: rgba(220, 210, 185, 0.85);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+}
+
+/* ===== CAPTION / SMALL TEXT ===== */
+.caption {
+  color: rgba(190, 165, 110, 0.85);
+  font-style: italic;
+  letter-spacing: 0.08em;
+}
+
+/* ===== PARTY CARD TEXT ===== */
+.party-card {
+  color: rgba(230, 215, 180, 0.9);
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* ===== BUTTON TEXT ===== */
+.btn-primary,
+.btn-secondary {
+  letter-spacing: 0.18em;
+}
