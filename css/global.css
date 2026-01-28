@@ -665,3 +665,88 @@ section p {
   justify-content: center;
   text-align: center;
 }
+.hero h1 {
+  font-family: var(--font-title);
+  font-size: 56px;
+  letter-spacing: 0.18em;
+  color: #f5f5f5;
+  text-shadow:
+    0 6px 30px rgba(0,0,0,0.65),
+    0 0 18px rgba(197,160,77,0.35);
+}
+.hero-overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0.65),
+      rgba(0,0,0,0.85)
+    );
+}
+.tagline {
+  margin-top: 18px;
+  font-size: 14px;
+  letter-spacing: 0.32em;
+  opacity: 0.85;
+}
+.hero-cta {
+  margin-top: 56px;
+}
+/* ================================
+   EUROPEAN CLUB HERO – LUXURY MODE
+================================ */
+
+/* Nền tối sâu, lạnh */
+.hero {
+  background-color: #050505;
+}
+
+/* Video trầm – mờ – cinematic */
+.hero-video {
+  filter: brightness(0.55) contrast(1.05) saturate(0.85);
+}
+
+/* Overlay kiểu club châu Âu */
+.hero-overlay {
+  background:
+    radial-gradient(
+      80% 60% at 50% 40%,
+      rgba(197,160,77,0.12),
+      rgba(0,0,0,0.92)
+    );
+}
+
+/* TITLE – sang kiểu EU */
+.hero h1 {
+  font-family: var(--font-title);
+  font-size: 56px;
+  letter-spacing: 0.22em;
+  color: #f2f2f2;
+  text-shadow:
+    0 8px 40px rgba(0,0,0,0.75),
+    0 0 24px rgba(197,160,77,0.35);
+}
+
+/* Tagline nhỏ – lạnh – tinh */
+.tagline {
+  margin-top: 22px;
+  font-size: 13px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: rgba(197,160,77,0.85);
+}
+
+/* Mô tả chìm – không kể lể */
+.hero-desc {
+  margin-top: 22px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.65);
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA trễ – có khoảng thở */
+.hero-cta {
+  margin-top: 64px;
+}
