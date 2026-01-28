@@ -137,3 +137,7 @@ document.querySelectorAll('.horizontal-scroll').forEach(gallery => {
     gallery.scrollLeft = scrollLeft - walk;
   });
 });
+const heroTitle = document.querySelector('.hero-title');
+if (heroTitle) {
+  setTimeout(() => heroTitle.classList.add('show'), 300);
+}
