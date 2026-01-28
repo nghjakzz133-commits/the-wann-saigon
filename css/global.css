@@ -1038,3 +1038,128 @@ section p {
     rgba(0,0,0,0) 70%
   );
 }
+/* =================================================
+   HERO – FINAL OVERRIDE (CLEAN / LUXURY / NIGHTLIFE)
+   Chỉ ghi đè HERO – phần còn lại GIỮ NGUYÊN
+================================================= */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+/* VIDEO */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+  filter: brightness(0.6) contrast(1.05) saturate(1.05);
+  animation: heroZoom 6s ease forwards;
+  z-index: 0;
+}
+
+/* OVERLAY – SẠCH, KHÔNG ĐỎ */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 50% 38%,
+      rgba(255,215,150,.18),
+      rgba(0,0,0,0) 55%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.35),
+      rgba(0,0,0,.9)
+    );
+  z-index: 1;
+}
+
+/* CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,.18),
+    rgba(0,0,0,0) 68%
+  );
+}
+
+/* TITLE */
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(42px, 9vw, 92px);
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: #f5e6c8;
+  text-shadow:
+    0 8px 40px rgba(0,0,0,.75),
+    0 0 24px rgba(197,160,77,.35);
+}
+
+.hero-title span {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: titleReveal .9s ease forwards;
+}
+
+.hero-title span:nth-child(1){animation-delay:.2s}
+.hero-title span:nth-child(2){animation-delay:.4s}
+.hero-title span:nth-child(3){animation-delay:.6s}
+
+/* TAGLINE */
+.tagline {
+  margin-top: 22px;
+  font-size: 13px;
+  letter-spacing: .36em;
+  text-transform: uppercase;
+  color: rgba(197,160,77,.85);
+}
+
+/* DESC */
+.hero-desc {
+  margin-top: 22px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,.65);
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA */
+.hero-cta {
+  margin-top: 60px;
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+}
+
+.hero-cta .btn-primary {
+  background: transparent;
+  border: 1px solid #c9a24d;
+  color: #c9a24d;
+  letter-spacing: .18em;
+}
+
+/* ANIMATION */
+@keyframes heroZoom {
+  from { transform: scale(1.1); }
+  to   { transform: scale(1); }
+}
+
+@keyframes titleReveal {
+  to { opacity: 1; transform: translateY(0); }
+}
