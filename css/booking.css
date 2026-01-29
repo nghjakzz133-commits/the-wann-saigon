@@ -1,0 +1,335 @@
+/* =====================================================
+   BOOKING.CSS – THE WANN SAIGON
+   Depends on: core.css
+   Purpose:
+   - Booking / Event / Contact page
+   - Luxury / Nightlife / Clean
+===================================================== */
+
+
+/* =====================================================
+   1. HEADER (REUSE – SIMPLE)
+===================================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(11,15,20,0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: var(--border-soft);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo img {
+  height: 44px;
+  filter: drop-shadow(0 0 10px rgba(191,167,106,.35));
+}
+
+.main-nav a {
+  margin-left: 28px;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.65);
+  transition: color .25s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--accent-gold);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .main-nav { display: none; }
+  .menu-toggle { display: block; }
+}
+
+
+/* =====================================================
+   2. BOOKING HERO
+===================================================== */
+
+.booking-hero {
+  min-height: 100vh;
+  padding-top: 72px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.55),
+      rgba(0,0,0,.9)
+    ),
+    url("../images/space/IMG_8777.jpeg") center/cover no-repeat;
+}
+
+.booking-hero .container {
+  max-width: 880px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 11px;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+}
+
+.booking-hero h1 {
+  font-family: var(--font-title);
+  font-size: clamp(42px, 7vw, 84px);
+  line-height: 1.05;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.booking-hero p {
+  margin-top: 24px;
+  max-width: 560px;
+  color: rgba(255,255,255,.75);
+  font-size: 15px;
+}
+
+
+/* =====================================================
+   3. BOOKING HOST
+===================================================== */
+
+.booking-host {
+  padding: clamp(100px, 14vw, 160px) 0;
+}
+
+.section-header {
+  max-width: 640px;
+  margin-bottom: 72px;
+}
+
+.section-header h2 {
+  font-family: var(--font-title);
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.2;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.section-header p {
+  margin-top: 18px;
+  color: rgba(255,255,255,.75);
+}
+
+.host-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.host-col {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.host-col.offset {
+  margin-top: 48px;
+}
+
+.host-col img {
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  transition: transform .4s ease, filter .4s ease;
+}
+
+.host-col img:hover {
+  transform: translateY(-6px);
+  filter: brightness(1.05);
+}
+
+@media (max-width: 1024px) {
+  .host-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+  .host-col.offset {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .host-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =====================================================
+   4. BOOKING FORM
+===================================================== */
+
+.booking-form {
+  padding: clamp(100px, 14vw, 160px) 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255,255,255,0.02)
+  );
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 48px;
+}
+
+.form-card {
+  background: var(--bg-surface);
+  border: var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.form-card h2 {
+  margin-bottom: 28px;
+  font-family: var(--font-title);
+  letter-spacing: .08em;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-sub);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.04);
+  border: var(--border-soft);
+  border-radius: 12px;
+  color: var(--text-main);
+  font-family: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+}
+
+.btn-primary.full {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-gold);
+  background: transparent;
+  color: var(--accent-gold);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   5. CONTACT CARD
+===================================================== */
+
+.contact-card {
+  padding: 40px;
+  background: var(--bg-surface);
+  border: var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  border-radius: 20px;
+}
+
+.contact-card h2 {
+  margin-bottom: 28px;
+  font-family: var(--font-title);
+  letter-spacing: .08em;
+}
+
+.contact-item {
+  margin-bottom: 22px;
+}
+
+.contact-item span {
+  display: block;
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-sub);
+  margin-bottom: 6px;
+}
+
+.contact-item p a {
+  color: var(--accent-gold);
+}
+
+
+/* =====================================================
+   6. FOOTER CTA
+===================================================== */
+
+.booking-cta {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.booking-cta p {
+  margin-bottom: 24px;
+  color: rgba(255,255,255,.75);
+}
+
+.btn-outline {
+  padding: 12px 32px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   7. RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+  .booking-grid {
+    grid-template-columns: 1fr;
+  }
+}
