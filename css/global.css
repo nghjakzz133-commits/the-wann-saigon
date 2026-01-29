@@ -901,3 +901,67 @@ section p {
   }
 }
 ư
+/* ===== CONTACT ALIGN FIX ===== */
+
+/* Section header */
+.luxury-contact-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 64px;
+}
+
+.luxury-contact-header h2 {
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.luxury-contact-header p {
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* Contact cards grid */
+.contact-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Card base */
+.contact-list .party-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 180px;
+}
+
+/* Label */
+.contact-list .label {
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+}
+
+/* Facebook card */
+.facebook-card {
+  gap: 12px;
+}
+
+.facebook-card .fb-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.facebook-card .fb-info {
+  text-align: center;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .contact-list {
+    grid-template-columns: 1fr;
+  }
+}
