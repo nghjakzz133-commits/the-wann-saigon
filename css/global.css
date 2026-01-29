@@ -421,3 +421,136 @@ section p {
   }
 
 }
+/* =====================================================
+   PARTY SECTION – HOME
+===================================================== */
+
+.party {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    var(--bg-dark),
+    var(--bg-soft)
+  );
+  overflow: hidden;
+}
+
+.party .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Header */
+.party .section-header {
+  margin-bottom: 48px;
+}
+
+.party .section-header h2 {
+  color: var(--accent-gold);
+}
+
+.party .section-header p {
+  margin-top: 12px;
+  max-width: 520px;
+  color: rgba(255,255,255,.75);
+}
+
+/* =====================================
+   Horizontal gallery
+===================================== */
+
+.home-gallery {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 24px 0 12px;
+  scroll-snap-type: x mandatory;
+}
+
+.home-gallery img {
+  flex: 0 0 auto;
+  width: 320px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  scroll-snap-align: center;
+  filter: brightness(.9) contrast(1.05);
+  transition: transform .35s ease, filter .35s ease;
+}
+
+.home-gallery img:hover {
+  transform: scale(1.04);
+  filter: brightness(1) contrast(1.1);
+}
+
+/* Hide scrollbar */
+.home-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+/* =====================================
+   Party cards
+===================================== */
+
+.party-cards {
+  margin: 56px 0 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 960px;
+}
+
+.party-card {
+  padding: 18px 12px;
+  border: 1px solid rgba(201,162,77,.35);
+  border-radius: 999px;
+  font-size: 13px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  cursor: default;
+  background: linear-gradient(
+    180deg,
+    rgba(201,162,77,.08),
+    rgba(0,0,0,.0)
+  );
+  transition: 
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+}
+
+.party-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201,162,77,.15);
+  background: rgba(201,162,77,.12);
+}
+
+/* =====================================
+   CTA button
+===================================== */
+
+.party .btn-primary {
+  margin-top: 8px;
+}
+
+/* =====================================
+   Mobile
+===================================== */
+
+@media (max-width: 768px) {
+
+  .home-gallery img {
+    width: 260px;
+    height: 170px;
+  }
+
+  .party-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+}
