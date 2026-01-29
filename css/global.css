@@ -553,4 +553,122 @@ section p {
     gap: 14px;
   }
 
+}/* =====================================================
+   ABOUT SECTION – HOME
+===================================================== */
+
+.about {
+  position: relative;
+  background: radial-gradient(
+      1200px 500px at 50% -20%,
+      rgba(201,162,77,.08),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      var(--bg-soft),
+      var(--bg-dark)
+    );
+  overflow: hidden;
 }
+
+.about .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Header */
+.about .section-header {
+  margin-bottom: 56px;
+}
+
+.about .section-header h2 {
+  font-family: var(--font-title);
+  letter-spacing: .04em;
+  color: var(--text-main);
+}
+
+.about .section-header p {
+  margin-top: 14px;
+  max-width: 520px;
+  color: rgba(255,255,255,.7);
+}
+
+/* =====================================
+   Gallery – emotional / slow
+===================================== */
+
+.about .home-gallery {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  padding: 32px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.about .home-gallery img {
+  flex: 0 0 auto;
+  width: 360px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 16px;
+  scroll-snap-align: center;
+
+  filter: brightness(.85) contrast(1.08) saturate(1.05);
+  transition:
+    transform .6s cubic-bezier(.2,.8,.2,1),
+    filter .6s ease,
+    box-shadow .6s ease;
+}
+
+.about .home-gallery img:hover {
+  transform: scale(1.06);
+  filter: brightness(1) contrast(1.12) saturate(1.1);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.6),
+    0 0 0 1px rgba(201,162,77,.15);
+}
+
+/* Hide scrollbar */
+.about .home-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+/* =====================================
+   Fade mask (cinematic edges)
+===================================== */
+
+.about::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--bg-dark)
+  );
+  pointer-events: none;
+}
+
+/* =====================================
+   Mobile
+===================================== */
+
+@media (max-width: 768px) {
+
+  .about .section-header {
+    margin-bottom: 40px;
+  }
+
+  .about .home-gallery img {
+    width: 280px;
+    height: 190px;
+  }
+
+}
+
