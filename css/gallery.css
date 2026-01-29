@@ -1,174 +1,232 @@
-/* ===============================
-   GALLERY – THE WANN SAIGON
-   Emotion • Luxury • Nightlife
-================================ */
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-.gallery-hero {
-  position: relative;
-  height: 60vh;
-  background: url("../assets/images/space/IMG_8001.jpeg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  <title>Gallery | The WANN Saigon</title>
 
-.gallery-hero .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-}
+  <!-- SEO -->
+  <meta name="description"
+        content="Gallery The WANN Saigon – không gian, party và nhịp đêm được kể bằng hình ảnh và cảm xúc." />
 
-.gallery-hero .hero-content {
-  position: relative;
-  text-align: center;
-  color: #fff;
-}
+  <!-- CSS (CHUNG + RIÊNG GALLERY) -->
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+</head>
 
-.gallery-hero h1 {
-  font-size: 42px;
-  letter-spacing: 3px;
-}
+<body>
 
-.gallery-hero p {
-  margin-top: 12px;
-  opacity: 0.85;
-}
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container">
 
-/* SECTION */
-.gallery-section {
-  padding: 80px 24px;
-  text-align: center;
-}
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/images/logo/logo.png" alt="The WANN Saigon">
+      </a>
+    </div>
 
-.gallery-section.dark {
-  background: #0b0b0b;
-}
+    <div class="header-right">
 
-.gallery-section h2 {
-  font-size: 32px;
-  margin-bottom: 12px;
-}
+      <nav class="main-nav">
+        <a href="index.html" data-vi="Trang chủ" data-en="Home"></a>
+        <a href="party.html" data-vi="Party" data-en="Party"></a>
+        <a href="gallery.html" class="active"
+           data-vi="Gallery" data-en="Gallery"></a>
+        <a href="booking.html" data-vi="Booking" data-en="Booking"></a>
+        <a href="contact.html" data-vi="Liên hệ" data-en="Contact"></a>
+      </nav>
 
-.section-desc {
-  max-width: 640px;
-  margin: 0 auto 40px;
-  opacity: 0.75;
-}
+      <div class="lang-switch">
+        <button data-lang="vi">VI</button>
+        <button data-lang="en">EN</button>
+      </div>
 
-/* GRID */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
+      <div class="menu-toggle">☰</div>
 
-.gallery-grid.small {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
+    </div>
+  </div>
+</header>
 
-.gallery-grid.host {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-}
+<!-- ================= GALLERY HERO ================= -->
+<section class="hero gallery-hero">
+  <div class="hero-overlay"></div>
 
-.gallery-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
-  transition: transform .4s ease, opacity .4s ease;
-}
+  <div class="hero-content" data-reveal>
+    <h1 class="hero-title">
+      <span data-vi="GALLERY" data-en="GALLERY">GALLERY</span>
+    </h1>
 
-.gallery-grid img:hover {
-  transform: scale(1.03);
-  opacity: 0.9;
-}
+    <p class="hero-desc"
+       data-vi="Không phải kho ảnh – mà là hành trình cảm xúc."
+       data-en="Not a photo archive — but an emotional journey.">
+       Không phải kho ảnh – mà là hành trình cảm xúc.
+    </p>
+  </div>
+</section>
 
-/* CTA */
-.gallery-cta {
-  padding: 100px 24px;
-  text-align: center;
-  background: linear-gradient(to bottom, #000, #111);
-}
+<!-- ========== GALLERY – EMOTIONAL JOURNEY ========== -->
 
-.gallery-cta h2 {
-  font-size: 34px;
-  margin-bottom: 12px;
-}
+<!-- SPACE -->
+<section class="gallery-section horizontal">
+  <div class="section-head" data-reveal>
+    <h2 data-vi="Không gian The WANN Saigon"
+        data-en="The WANN Saigon Space"></h2>
 
-.gallery-cta p {
-  opacity: 0.75;
-  margin-bottom: 32px;
-}
+    <p data-vi="Thiết kế sang trọng, ánh sáng và bố cục tạo nên dấu ấn riêng."
+       data-en="Luxury design, lighting, and layout define our signature atmosphere."></p>
 
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-/* ===============================
-   Gallery Fade-in Effect
-================================ */
+    <span class="section-caption"
+      data-vi="Mỗi bước chân là một cảm giác khác biệt – tinh tế, riêng tư và đầy cuốn hút."
+      data-en="Every step unveils a refined atmosphere — intimate, elegant, and immersive.">
+    </span>
+  </div>
 
-.fade-item {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
+  <div class="horizontal-gallery">
+    <img src="assets/images/space/IMG_8001.jpeg" loading="lazy">
+    <img src="assets/images/space/IMG_8002.jpeg" loading="lazy">
+    <img src="assets/images/space/IMG_8777.jpeg" loading="lazy">
+    <img src="assets/images/space/IMG_8778.jpeg" loading="lazy">
+    <img src="assets/images/space/IMG_8779.jpeg" loading="lazy">
+    <img src="assets/images/space/IMG_9079.jpeg" loading="lazy">
+    <img src="assets/images/space/IMG_9082.jpeg" loading="lazy">
+    <img src="assets/images/space/IMG_9083.jpeg" loading="lazy">
+    <img src="assets/images/space/KIMM5019.jpeg" loading="lazy">
+  </div>
+</section>
 
-.fade-item.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-/* ========== HORIZONTAL GALLERY PRO ========== */
-.gallery-section.horizontal {
-  padding: 80px 0;
-  overflow: hidden;
-}
+<!-- PARTY -->
+<section class="gallery-section horizontal dark">
+  <div class="section-head" data-reveal>
+    <h2 data-vi="Party & Celebration"
+        data-en="Party & Celebration"></h2>
 
-.horizontal-gallery {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding: 20px 24px 10px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
+    <p data-vi="Những buổi tiệc sinh nhật, private party và đêm đáng nhớ."
+       data-en="Birthday parties, private celebrations, and unforgettable nights."></p>
 
-.horizontal-gallery::-webkit-scrollbar {
-  display: none;
-}
+    <span class="section-caption"
+      data-vi="Âm nhạc lên cao, ánh đèn chuyển động – khoảnh khắc chỉ có trong đêm."
+      data-en="When music rises and lights move — memories are created.">
+    </span>
+  </div>
 
-.horizontal-gallery img {
-  flex: 0 0 auto;
-  width: 78vw;
-  max-width: 520px;
-  height: 60vh;
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: 16px;
-  scroll-snap-align: center;
+  <div class="horizontal-gallery">
+    <img src="assets/images/party/IMG_8019.jpeg" loading="lazy">
+    <img src="assets/images/party/IMG_8022.jpeg" loading="lazy">
+    <img src="assets/images/party/IMG_8023.jpeg" loading="lazy">
+    <img src="assets/images/party/IMG_8024.jpeg" loading="lazy">
+    <img src="assets/images/party/IMG_8609.jpeg" loading="lazy">
+    <img src="assets/images/party/IMG_9183.jpeg" loading="lazy">
+    <img src="assets/images/party/KIMM4161.jpeg" loading="lazy">
+  </div>
+</section>
 
-  /* Hiệu ứng xịn */
-  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
-  transition: transform .6s ease, opacity .6s ease;
-}
+<!-- DETAIL -->
+<section class="gallery-section horizontal">
+  <div class="section-head" data-reveal>
+    <h2 data-vi="Chi tiết tạo nên đẳng cấp"
+        data-en="Details That Define Luxury"></h2>
 
-/* Desktop */
-@media (min-width: 1024px) {
-  .horizontal-gallery img {
-    width: 420px;
-    height: 520px;
-  }
-}
+    <p data-vi="Từng góc nhỏ đều được chăm chút kỹ lưỡng."
+       data-en="Every detail is carefully crafted to elevate the experience."></p>
 
-/* Fade-in */
-.fade-item {
-  opacity: 0;
-  transform: translateY(30px) scale(0.96);
-}
+    <span class="section-caption"
+      data-vi="Đẳng cấp không nằm ở sự phô trương – mà ở từng chi tiết nhỏ."
+      data-en="Luxury lives in the smallest details.">
+    </span>
+  </div>
 
-.fade-item.show {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
+  <div class="horizontal-gallery">
+    <img src="assets/images/detail/IMG_7998.jpeg" loading="lazy">
+    <img src="assets/images/detail/IMG_8026.jpeg" loading="lazy">
+    <img src="assets/images/detail/IMG_9455.jpeg" loading="lazy">
+    <img src="assets/images/detail/IMG_9457.jpeg" loading="lazy">
+    <img src="assets/images/detail/IMG_9458.jpeg" loading="lazy">
+    <img src="assets/images/detail/IMG_9460.jpeg" loading="lazy">
+  </div>
+</section>
+
+<!-- ACTION -->
+<section class="gallery-section horizontal dark">
+  <div class="section-head" data-reveal>
+    <h2 data-vi="Nhịp đêm tại The WANN"
+        data-en="Night Vibes at The WANN"></h2>
+
+    <p data-vi="Âm nhạc, chuyển động và cảm xúc lan tỏa."
+       data-en="Music, movement, and emotions flowing through the night."></p>
+
+    <span class="section-caption"
+      data-vi="Khi đêm lên cao, cảm xúc bắt đầu dẫn lối."
+      data-en="As the night deepens, emotions take control.">
+    </span>
+  </div>
+
+  <div class="horizontal-gallery">
+    <img src="assets/images/action/IMG_8625.jpeg" loading="lazy">
+    <img src="assets/images/action/IMG_9463.jpeg" loading="lazy">
+    <img src="assets/images/action/IMG_9464.jpeg" loading="lazy">
+    <img src="assets/images/action/IMG_9465.jpeg" loading="lazy">
+    <img src="assets/images/action/KIMM1049.jpeg" loading="lazy">
+    <img src="assets/images/action/MIN_5768.jpeg" loading="lazy">
+    <img src="assets/images/action/MIN_5828.jpeg" loading="lazy">
+    <img src="assets/images/action/MIN_5947.jpeg" loading="lazy">
+    <img src="assets/images/action/MIN_7687.jpeg" loading="lazy">
+  </div>
+</section>
+
+<!-- BOOKING HOST -->
+<section class="gallery-section horizontal">
+  <div class="section-head" data-reveal>
+    <h2 data-vi="Booking Host – Người đồng hành"
+        data-en="Booking Hosts – Your Companions"></h2>
+
+    <p data-vi="Tiếp đón, hỗ trợ và đảm bảo trải nghiệm trọn vẹn."
+       data-en="Welcoming, assisting, and ensuring a seamless experience."></p>
+
+    <span class="section-caption"
+      data-vi="Không chỉ là đặt bàn – mà là người đồng hành trong suốt đêm tiệc."
+      data-en="Not just booking — but companionship throughout the night.">
+    </span>
+  </div>
+
+  <div class="horizontal-gallery">
+    <img src="assets/images/booking-host/IMG_9466.jpeg" loading="lazy">
+    <img src="assets/images/booking-host/IMG_9467.jpeg" loading="lazy">
+    <img src="assets/images/booking-host/IMG_9468.jpeg" loading="lazy">
+    <img src="assets/images/booking-host/IMG_9469.jpeg" loading="lazy">
+    <img src="assets/images/booking-host/IMG_9470.jpeg" loading="lazy">
+    <img src="assets/images/booking-host/IMG_9471.jpeg" loading="lazy">
+    <img src="assets/images/booking-host/IMG_9472.jpeg" loading="lazy">
+    <img src="assets/images/booking-host/IMG_9473.jpeg" loading="lazy">
+    <img src="assets/images/booking-host/IMG_9474.jpeg" loading="lazy">
+    <img src="assets/images/booking-host/IMG_9475.jpeg" loading="lazy">
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <p>The WANN Saigon</p>
+    <p>51 – 53 Bùi Thị Xuân, Quận 1, TP.HCM</p>
+    <p>© 2026 The WANN Saigon</p>
+  </div>
+</footer>
+
+<!-- ================= STICKY CTA ================= -->
+<div class="sticky-cta">
+  <a href="tel:0919918178" class="cta-primary"
+     data-vi="Gọi đặt Party" data-en="Call to Book">
+     Gọi đặt Party
+  </a>
+  <a href="https://zalo.me/0919918178" target="_blank"
+     class="cta-secondary"
+     data-vi="Zalo" data-en="Zalo">
+     Zalo
+  </a>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
