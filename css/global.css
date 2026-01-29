@@ -1475,3 +1475,77 @@ button {
     padding: 14px 28px;
   }
 }
+/* ================================
+   MENU SECTION – LUXURY TYPO
+   Only affect .menu-section
+================================ */
+
+.menu-section {
+  padding: clamp(80px, 10vw, 140px) 0;
+}
+
+/* Block spacing */
+.menu-section .menu-block {
+  margin-bottom: 96px;
+}
+
+/* Eyebrow */
+.menu-section .section-eyebrow {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(212, 175, 55, 0.55); /* gold soft */
+}
+
+/* Section title */
+.menu-section h2 {
+  margin-bottom: 36px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #f3e9d6; /* ivory champagne */
+}
+
+/* Menu item wrapper */
+.menu-section .menu-item {
+  margin-bottom: 22px;
+}
+
+/* Item name */
+.menu-section .menu-item h3 {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(255, 248, 235, 0.9); /* warm ivory */
+}
+
+/* Item description */
+.menu-section .menu-item p {
+  margin-top: 6px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(212, 175, 55, 0.6); /* muted gold */
+}
+
+/* Food description subtle */
+.menu-section .menu-block:last-child .menu-item p {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-style: italic;
+  color: rgba(255, 235, 200, 0.55);
+}
+
+/* Mobile tune */
+@media (max-width: 768px) {
+  .menu-section .menu-block {
+    margin-bottom: 72px;
+  }
+
+  .menu-section h2 {
+    margin-bottom: 28px;
+  }
+}
