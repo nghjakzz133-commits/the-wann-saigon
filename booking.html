@@ -100,28 +100,27 @@
     </div>
 
     <form
-      action="https://formsubmit.co/el/rotave"
+      action="https://formsubmit.co/davidphong3979@gmail.com"
       method="POST"
       class="form-card luxury-form">
 
-      <!-- ================= FormSubmit config ================= -->
+      <!-- FormSubmit config -->
       <input type="hidden" name="_subject" value="New Booking – The WANN Saigon">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
 
-      <!-- QUAN TRỌNG: FIX 404 -->
+      <!-- Redirect sau khi gửi (tránh 404) -->
       <input type="hidden" name="_next"
-            value="https://the-wann-saigon.pages.dev/booking.html?success=1">
+        value="https://the-wann-saigon.pages.dev/booking.html?success=1">
 
-      <!-- ================= FORM FIELDS ================= -->
       <div class="form-group">
-        <label>Họ &amp; Tên</label>
-        <input type="text" name="name" placeholder="Họ tên của bạn" required>
+        <label>Họ & Tên</label>
+        <input type="text" name="name" required>
       </div>
 
       <div class="form-group">
         <label>Số điện thoại</label>
-        <input type="tel" name="phone" placeholder="Số điện thoại liên hệ" required>
+        <input type="tel" name="phone" required>
       </div>
 
       <div class="form-group">
@@ -143,17 +142,13 @@
 
         <div class="form-group">
           <label>Số khách</label>
-          <input type="number" name="guests" min="1" placeholder="10">
+          <input type="number" name="guests" min="1">
         </div>
       </div>
 
       <div class="form-group">
         <label>Yêu cầu thêm</label>
-        <textarea
-          name="note"
-          rows="4"
-          placeholder="Bánh sinh nhật, DJ riêng, khu vực VIP...">
-        </textarea>
+        <textarea name="note" rows="4"></textarea>
       </div>
 
       <button type="submit" class="btn-luxury">
