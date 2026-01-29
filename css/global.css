@@ -1306,3 +1306,68 @@ button {
   transform: scale(1.04);
   filter: brightness(1.05);
 }
+/* ================= MENU INTRO – LUXURY ================= */
+.menu-intro--luxury {
+  position: relative;
+  padding: 80px 0 90px;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(160, 30, 30, 0.35),
+      rgba(0, 0, 0, 0.95) 70%
+    );
+}
+
+.menu-intro--luxury::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.85),
+      transparent 40%,
+      transparent 60%,
+      rgba(0,0,0,0.85)
+    );
+  pointer-events: none;
+}
+
+.menu-intro--luxury .container {
+  position: relative;
+  max-width: 720px;
+}
+
+.menu-intro-eyebrow {
+  display: block;
+  margin-bottom: 14px;
+  letter-spacing: 0.35em;
+  font-size: 12px;
+  color: var(--gold);
+  opacity: 0.85;
+}
+
+.menu-intro-text {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+  color: rgba(255,255,255,0.9);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+
+.btn-outline-gold:hover {
+  background: var(--gold);
+  color: #000;
+}
+
+.menu-intro-note {
+  display: block;
+  margin-top: 14px;
+  font-size: 12px;
+  opacity: 0.6;
+}
