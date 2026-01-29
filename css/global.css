@@ -672,3 +672,76 @@ section p {
 
 }
 
+/* =====================================================
+   ABOUT – LUXURY UPGRADE
+   Applies to: section.about
+===================================================== */
+
+/* Section header luxury */
+.section-header--luxury {
+  max-width: 820px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+/* Eyebrow (ABOUT US) */
+.section-eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 11px;
+  letter-spacing: .38em;
+  text-transform: uppercase;
+  color: color-mix(
+    in srgb,
+    var(--accent-gold) 85%,
+    transparent
+  );
+}
+
+/* Refine title spacing */
+.section-header--luxury h2 {
+  margin-bottom: 20px;
+}
+
+/* Softer paragraph for luxury */
+.section-header--luxury p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(255,255,255,.72);
+}
+
+/* ===============================
+   Luxury horizontal gallery
+================================ */
+
+.luxury-gallery {
+  gap: 24px;
+  padding-bottom: 8px;
+}
+
+/* Images */
+.luxury-gallery img {
+  height: 320px;
+  border-radius: 18px;
+  object-fit: cover;
+  filter: brightness(.92) contrast(1.05);
+  transition:
+    transform .6s cubic-bezier(.2,.8,.2,1),
+    filter .6s ease;
+}
+
+/* Hover effect – desktop only */
+@media (hover: hover) {
+  .luxury-gallery img:hover {
+    transform: scale(1.04);
+    filter: brightness(1) contrast(1.08);
+  }
+}
+
+/* Mobile tuning */
+@media (max-width: 768px) {
+  .luxury-gallery img {
+    height: 240px;
+    border-radius: 14px;
+  }
+}
