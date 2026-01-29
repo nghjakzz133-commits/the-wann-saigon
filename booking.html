@@ -3,178 +3,198 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Booking | The WANN Saigon</title>
 
-  <!-- GLOBAL + BOOKING CSS -->
+  <!-- SEO -->
+  <meta name="description"
+        content="Booking & Private Events tại The WANN Saigon – không gian nightlife cao cấp cho party và sự kiện riêng tại trung tâm Sài Gòn." />
+
+  <!-- CSS (DÙNG CHUNG VỚI HOME) -->
   <link rel="stylesheet" href="css/core.css" />
   <link rel="stylesheet" href="css/global.css" />
-
-
-  <meta name="description"
-        content="Booking & Event tại The WANN Saigon – không gian nightlife cao cấp tại Sài Gòn." />
 </head>
+
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- ================= HEADER (SAME AS HOME) ================= -->
 <header class="site-header">
-  <div class="container header-inner">
+  <div class="container">
 
-    <a href="index.html" class="logo">
-      <img src="assets/images/logo/logo.png" alt="The WANN Saigon">
-    </a>
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/images/logo/logo.png" alt="The WANN Saigon">
+      </a>
+    </div>
 
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="index.html#party">Party</a>
-      <a href="index.html#gallery">Gallery</a>
-      <a href="booking.html" class="active">Booking</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
+    <div class="header-right">
 
-    <div class="menu-toggle">☰</div>
+      <nav class="main-nav">
+        <a href="index.html" data-vi="Trang chủ" data-en="Home"></a>
+        <a href="party.html" data-vi="Party" data-en="Party"></a>
+        <a href="gallery.html" data-vi="Gallery" data-en="Gallery"></a>
+        <a href="booking.html" class="active"
+           data-vi="Booking" data-en="Booking"></a>
+        <a href="contact.html" data-vi="Liên hệ" data-en="Contact"></a>
+      </nav>
 
+      <div class="lang-switch">
+        <button data-lang="vi">VI</button>
+        <button data-lang="en">EN</button>
+      </div>
+
+      <div class="menu-toggle">☰</div>
+
+    </div>
   </div>
-
-  <!-- MOBILE MENU -->
-  <nav class="main-nav mobile-nav">
-    <a href="index.html">Home</a>
-    <a href="index.html#party">Party</a>
-    <a href="index.html#gallery">Gallery</a>
-    <a href="booking.html" class="active">Booking</a>
-    <a href="index.html#contact">Contact</a>
-  </nav>
 </header>
 
 <!-- ================= BOOKING HERO ================= -->
-<section class="booking-hero">
-  <div class="container">
-    <span class="section-eyebrow">RESERVATION</span>
-    <h1>Booking &<br>Private Events</h1>
-    <p>
-      Đặt bàn, tổ chức party riêng, sự kiện thương hiệu hoặc hợp tác truyền thông.<br>
-      The WANN mang đến trải nghiệm nightlife chỉn chu & đẳng cấp.
+<section class="hero booking-hero">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content" data-reveal>
+    <h1 class="hero-title">
+      <span data-vi="BOOKING" data-en="BOOKING">BOOKING</span>
+      <span class="accent" data-vi="& PARTY" data-en="& EVENTS">& PARTY</span>
+    </h1>
+
+    <p class="hero-desc"
+       data-vi="Đặt bàn, private party, sự kiện thương hiệu tại The WANN Saigon."
+       data-en="Reserve tables, private parties, and brand events at The WANN Saigon.">
+       Đặt bàn, private party, sự kiện thương hiệu tại The WANN Saigon.
     </p>
   </div>
 </section>
 
-<!-- ================= BOOKING HOST ================= -->
-<section class="booking-host">
+<!-- ================= HOST / EXPERIENCE ================= -->
+<section class="about">
   <div class="container">
-    <div class="section-header">
-      <span class="section-eyebrow">OUR HOST</span>
-      <h2>Đội ngũ &<br>Trải nghiệm Booking</h2>
-      <p>Mỗi buổi tiệc tại The WANN được chăm sóc bởi đội ngũ host chuyên nghiệp,
-         đảm bảo sự riêng tư, tinh tế và trọn vẹn cảm xúc.</p>
+
+    <div class="section-header" data-reveal>
+      <span class="section-eyebrow"
+            data-vi="Đội ngũ"
+            data-en="Our Host">
+        Đội ngũ
+      </span>
+
+      <h2 data-vi="Trải nghiệm Booking tinh tế"
+          data-en="A Refined Booking Experience">
+        Trải nghiệm Booking tinh tế
+      </h2>
+
+      <div class="section-divider"></div>
+
+      <p data-vi="Mỗi buổi tiệc tại The WANN được chăm sóc bởi đội ngũ host chuyên nghiệp, đảm bảo sự riêng tư và trọn vẹn cảm xúc."
+         data-en="Every party at The WANN is hosted by a professional team, ensuring privacy and a seamless night experience.">
+        Mỗi buổi tiệc tại The WANN được chăm sóc bởi đội ngũ host chuyên nghiệp, đảm bảo sự riêng tư và trọn vẹn cảm xúc.
+      </p>
     </div>
 
-    <div class="host-gallery">
-      <div class="host-col">
-        <img src="assets/images/booking-host/IMG_9466.jpeg" alt="">
-        <img src="assets/images/booking-host/IMG_9467.jpeg" alt="">
-        <img src="assets/images/booking-host/IMG_9468.jpeg" alt="">
-      </div>
-
-      <div class="host-col offset">
-        <img src="assets/images/booking-host/IMG_9469.jpeg" alt="">
-        <img src="assets/images/booking-host/IMG_9470.jpeg" alt="">
-        <img src="assets/images/booking-host/IMG_9471.jpeg" alt="">
-      </div>
-
-      <div class="host-col">
-        <img src="assets/images/booking-host/IMG_9472.jpeg" alt="">
-        <img src="assets/images/booking-host/IMG_9473.jpeg" alt="">
-        <img src="assets/images/booking-host/IMG_9474.jpeg" alt="">
-        <img src="assets/images/booking-host/IMG_9475.jpeg" alt="">
-      </div>
+    <div class="home-gallery horizontal-scroll" data-reveal>
+      <img src="assets/images/booking-host/IMG_9466.jpeg" alt="">
+      <img src="assets/images/booking-host/IMG_9469.jpeg" alt="">
+      <img src="assets/images/booking-host/IMG_9472.jpeg" alt="">
+      <img src="assets/images/booking-host/IMG_9475.jpeg" alt="">
     </div>
+
   </div>
 </section>
 
 <!-- ================= BOOKING FORM ================= -->
-<section class="booking-form">
-  <div class="container booking-grid">
+<section class="party">
+  <div class="container">
 
-    <!-- FORM CARD -->
+    <div class="section-header" data-reveal>
+      <h2 data-vi="Gửi yêu cầu Booking"
+          data-en="Send a Booking Request">
+        Gửi yêu cầu Booking
+      </h2>
+
+      <p data-vi="Chúng tôi sẽ liên hệ lại trong thời gian sớm nhất."
+         data-en="Our team will contact you shortly.">
+        Chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.
+      </p>
+    </div>
+
     <form action="https://formsubmit.co/booking@thewannsaigon.com"
           method="POST"
-          class="form-card">
+          class="form-card"
+          data-reveal>
+
       <input type="hidden" name="_subject" value="New Booking – The WANN Saigon">
       <input type="hidden" name="_captcha" value="false">
 
-      <h2>Thông tin đặt chỗ</h2>
       <div class="form-group">
-        <label>Họ & Tên</label>
+        <label data-vi="Họ & Tên" data-en="Full Name">Họ & Tên</label>
         <input type="text" name="name" required>
       </div>
 
       <div class="form-group">
-        <label>Số điện thoại</label>
+        <label data-vi="Số điện thoại" data-en="Phone Number">Số điện thoại</label>
         <input type="tel" name="phone" required>
       </div>
 
       <div class="form-group">
-        <label>Loại booking</label>
+        <label data-vi="Loại Booking" data-en="Booking Type">Loại Booking</label>
         <select name="type" required>
-          <option>Đặt bàn</option>
+          <option data-vi="Đặt bàn" data-en="Table Reservation">Đặt bàn</option>
           <option>Private Party</option>
-          <option>Sự kiện thương hiệu</option>
-          <option>Hợp tác / Media</option>
+          <option data-vi="Sự kiện thương hiệu" data-en="Brand Event">Sự kiện thương hiệu</option>
+          <option data-vi="Hợp tác / Media" data-en="Media / Collaboration">Hợp tác / Media</option>
         </select>
       </div>
 
       <div class="form-row">
         <div class="form-group">
-          <label>Ngày</label>
+          <label data-vi="Ngày" data-en="Date">Ngày</label>
           <input type="date" name="date" required>
         </div>
 
         <div class="form-group">
-          <label>Số khách</label>
+          <label data-vi="Số khách" data-en="Guests">Số khách</label>
           <input type="number" name="guests" min="1">
         </div>
       </div>
 
       <div class="form-group">
-        <label>Yêu cầu thêm</label>
+        <label data-vi="Yêu cầu thêm" data-en="Additional Notes">Yêu cầu thêm</label>
         <textarea name="note" rows="4"></textarea>
       </div>
 
-      <button type="submit" class="btn-primary full">
-        Gửi yêu cầu booking
+      <button type="submit" class="btn-primary full"
+              data-vi="Gửi yêu cầu Booking"
+              data-en="Submit Booking Request">
+        Gửi yêu cầu Booking
       </button>
+
     </form>
 
-    <!-- CONTACT CARD -->
-    <div class="contact-card">
-      <h2>Contact for Work</h2>
-      <p>📞 <a href="tel:0919918178">0919 918 178</a></p>
-      <p>💬 <a href="https://zalo.me/0919918178" target="_blank">0919 918 178</a></p>
-      <p>📧 booking@thewannsaigon.com</p>
-      <p>🤝 business@thewannsaigon.com</p>
-      <p>📸 media@thewannsaigon.com</p>
-    </div>
-
   </div>
 </section>
 
-<!-- ================= FOOTER CTA ================= -->
-<section class="booking-cta">
-  <div class="container text-center">
-    <p>Đêm của bạn xứng đáng được chuẩn bị một cách hoàn hảo.</p>
-    <a href="index.html" class="btn-outline">Quay về trang chủ</a>
+<!-- ================= FOOTER (SAME AS HOME) ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <p>The WANN Saigon</p>
+    <p>51 – 53 Bùi Thị Xuân, Quận 1, TP.HCM</p>
+    <p>© 2026 The WANN Saigon</p>
   </div>
-</section>
+</footer>
 
-<script>
-  // MOBILE MENU TOGGLE
-  const header = document.querySelector('.site-header');
-  const toggle = document.querySelector('.menu-toggle');
-  const mobileNav = document.querySelector('.mobile-nav');
+<!-- ================= STICKY CTA (MOBILE) ================= -->
+<div class="sticky-cta">
+  <a href="tel:0919918178" class="cta-primary"
+     data-vi="Gọi đặt Party" data-en="Call to Book">
+     Gọi đặt Party
+  </a>
+  <a href="https://zalo.me/0919918178" target="_blank"
+     class="cta-secondary"
+     data-vi="Zalo" data-en="Zalo">
+     Zalo
+  </a>
+</div>
 
-  toggle.addEventListener('click', () => {
-    mobileNav.classList.toggle('open');
-  });
-</script>
-
+<script src="js/main.js"></script>
 </body>
 </html>
