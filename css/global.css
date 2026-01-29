@@ -1153,3 +1153,25 @@ button {
     font-size: 22px;
   }
 }
+/* ===== FIX MENU OVERLAY TRANSPARENCY ===== */
+.site-header {
+  background: linear-gradient(
+    180deg,
+    rgba(6, 6, 6, 0.92) 0%,
+    rgba(6, 6, 6, 0.88) 60%,
+    rgba(6, 6, 6, 0.75) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.mobile-menu,
+.main-nav.open {
+  background: rgba(6, 6, 6, 0.96);
+}
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
