@@ -5,14 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Booking | The WANN Saigon</title>
 
-  <!-- Global / Core -->
+  <!-- Core only -->
   <link rel="stylesheet" href="assets/css/core.css" />
-  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/booking.css" />
 
-  <!-- SEO nhẹ -->
   <meta name="description" content="Booking & Event tại The WANN Saigon – không gian nightlife cao cấp tại Sài Gòn." />
 </head>
 <body>
+
+<!-- ================= HEADER (DÙNG CHUNG) ================= -->
+<header class="site-header">
+  <div class="container">
+
+    <a href="index.html" class="logo">
+      <img src="assets/images/logo-gold.png" alt="The WANN Saigon">
+    </a>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#party">Party</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="booking.html" class="active">Booking</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="menu-toggle">☰</div>
+  </div>
+</header>
 
 <!-- ================= BOOKING HERO ================= -->
 <section class="booking-hero">
@@ -26,12 +45,13 @@
     </h1>
 
     <p>
-      Đặt bàn, tổ chức party riêng, sự kiện thương hiệu hay hợp tác truyền thông.<br>
-      Đội ngũ The WANN luôn sẵn sàng đồng hành cùng bạn.
+      Đặt bàn, tổ chức party riêng, sự kiện thương hiệu hoặc hợp tác truyền thông.<br>
+      The WANN mang đến trải nghiệm nightlife chỉn chu & đẳng cấp.
     </p>
 
   </div>
 </section>
+
 <!-- ================= BOOKING HOST ================= -->
 <section class="booking-host">
   <div class="container">
@@ -44,36 +64,32 @@
       </h2>
       <p>
         Mỗi buổi tiệc tại The WANN được chăm sóc bởi đội ngũ host chuyên nghiệp,
-        đảm bảo trải nghiệm chỉn chu – riêng tư – đẳng cấp.
+        đảm bảo sự riêng tư, tinh tế và trọn vẹn cảm xúc.
       </p>
     </div>
 
     <div class="host-gallery">
 
-      <!-- COLUMN 1 -->
       <div class="host-col">
-        <img src="assets/images/booking-host/IMG_9466.jpeg" alt="">
-        <img src="assets/images/booking-host/IMG_9467.jpeg" alt="">
-        <img src="assets/images/booking-host/IMG_9468.jpeg" alt="">
+        <img src="assets/images/booking-host/IMG_9466.jpeg">
+        <img src="assets/images/booking-host/IMG_9467.jpeg">
+        <img src="assets/images/booking-host/IMG_9468.jpeg">
       </div>
 
-      <!-- COLUMN 2 -->
       <div class="host-col offset">
-        <img src="assets/images/booking-host/IMG_9469.jpeg" alt="">
-        <img src="assets/images/booking-host/IMG_9470.jpeg" alt="">
-        <img src="assets/images/booking-host/IMG_9471.jpeg" alt="">
+        <img src="assets/images/booking-host/IMG_9469.jpeg">
+        <img src="assets/images/booking-host/IMG_9470.jpeg">
+        <img src="assets/images/booking-host/IMG_9471.jpeg">
       </div>
 
-      <!-- COLUMN 3 -->
       <div class="host-col">
-        <img src="assets/images/booking-host/IMG_9472.jpeg" alt="">
-        <img src="assets/images/booking-host/IMG_9473.jpeg" alt="">
-        <img src="assets/images/booking-host/IMG_9474.jpeg" alt="">
-        <img src="assets/images/booking-host/IMG_9475.jpeg" alt="">
+        <img src="assets/images/booking-host/IMG_9472.jpeg">
+        <img src="assets/images/booking-host/IMG_9473.jpeg">
+        <img src="assets/images/booking-host/IMG_9474.jpeg">
+        <img src="assets/images/booking-host/IMG_9475.jpeg">
       </div>
 
     </div>
-
   </div>
 </section>
 
@@ -83,13 +99,11 @@
 
     <!-- FORM -->
     <form
-      action="https://formsubmit.co/YOUR_EMAIL@gmail.com"
+      action="https://formsubmit.co/booking@thewannsaigon.com"
       method="POST"
       class="form-card"
     >
-
-      <!-- Config -->
-      <input type="hidden" name="_subject" value="New Booking Request – The WANN Saigon">
+      <input type="hidden" name="_subject" value="New Booking – The WANN Saigon">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
 
@@ -97,24 +111,18 @@
 
       <div class="form-group">
         <label>Họ & Tên</label>
-        <input type="text" name="name" placeholder="Nguyễn Văn A" required>
+        <input type="text" name="name" required>
       </div>
 
       <div class="form-group">
         <label>Số điện thoại</label>
-        <input type="tel" name="phone" placeholder="090 xxx xxxx" required>
-      </div>
-
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="email" placeholder="you@email.com">
+        <input type="tel" name="phone" required>
       </div>
 
       <div class="form-group">
         <label>Loại booking</label>
         <select name="type" required>
-          <option value="">-- Chọn loại --</option>
-          <option>Đặt bàn cá nhân</option>
+          <option>Đặt bàn</option>
           <option>Private Party</option>
           <option>Sự kiện thương hiệu</option>
           <option>Hợp tác / Media</option>
@@ -129,43 +137,39 @@
 
         <div class="form-group">
           <label>Số khách</label>
-          <input type="number" name="guests" min="1" placeholder="10">
+          <input type="number" name="guests" min="1">
         </div>
       </div>
 
       <div class="form-group">
         <label>Yêu cầu thêm</label>
-        <textarea
-          name="message"
-          rows="4"
-          placeholder="Bàn VIP, DJ riêng, trang trí, thương hiệu..."
-        ></textarea>
+        <textarea name="note" rows="4"></textarea>
       </div>
 
       <button type="submit" class="btn-primary full">
         Gửi yêu cầu booking
       </button>
-
     </form>
 
-    <!-- CONTACT INFO -->
+    <!-- CONTACT -->
     <div class="contact-card">
 
       <h2>Contact for Work</h2>
 
       <div class="contact-item">
-        <span>📍 Địa điểm</span>
-        <p>The WANN Saigon<br>Quận 1, TP. Hồ Chí Minh</p>
-      </div>
-
-      <div class="contact-item">
         <span>📞 Booking Hotline</span>
-        <p>+84 9xx xxx xxx</p>
+        <p>
+          <a href="tel:0919918178">0919 918 178</a>
+        </p>
       </div>
 
       <div class="contact-item">
         <span>💬 Zalo</span>
-        <p>+84 9xx xxx xxx</p>
+        <p>
+          <a href="https://zalo.me/0919918178" target="_blank">
+            0919 918 178
+          </a>
+        </p>
       </div>
 
       <div class="contact-item">
@@ -174,7 +178,7 @@
       </div>
 
       <div class="contact-item">
-        <span>🤝 Business / Partnership</span>
+        <span>🤝 Business</span>
         <p>business@thewannsaigon.com</p>
       </div>
 
@@ -191,12 +195,8 @@
 <!-- ================= FOOTER CTA ================= -->
 <section class="booking-cta">
   <div class="container">
-    <p>
-      Đêm của bạn xứng đáng được chuẩn bị một cách hoàn hảo.
-    </p>
-    <a href="index.html" class="btn-outline">
-      Quay về trang chủ
-    </a>
+    <p>Đêm của bạn xứng đáng được chuẩn bị một cách hoàn hảo.</p>
+    <a href="index.html" class="btn-outline">Quay về trang chủ</a>
   </div>
 </section>
 
