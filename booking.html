@@ -5,24 +5,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Booking | The WANN Saigon</title>
 
-  <!-- Core only -->
-<link rel="stylesheet" href="css/core.css" />
-<link rel="stylesheet" href="css/booking.css" />
+  <meta name="description"
+        content="Booking & Event tại The WANN Saigon – không gian nightlife cao cấp tại Sài Gòn." />
 
+  <!-- CORE CSS -->
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/booking.css" />
 
-  <meta name="description" content="Booking & Event tại The WANN Saigon – không gian nightlife cao cấp tại Sài Gòn." />
+  <!-- FIX HEADER / MOBILE MENU -->
+  <style>
+    /* ===== HEADER ===== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo img {
+      height: 42px;
+    }
+
+    .desktop-nav {
+      display: none;
+    }
+
+    .desktop-nav a {
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    .desktop-nav a.active {
+      color: #c9a24d;
+    }
+
+    .menu-toggle {
+      font-size: 26px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* ===== MOBILE MENU FULL ===== */
+    .mobile-nav {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-20px);
+      transition: all 0.4s ease;
+    }
+
+    .site-header.open .mobile-nav {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .mobile-nav a {
+      font-size: 22px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      opacity: 0.85;
+    }
+
+    .mobile-nav a.active {
+      color: #c9a24d;
+    }
+
+    /* ===== DESKTOP ===== */
+    @media (min-width: 992px) {
+      .menu-toggle,
+      .mobile-nav {
+        display: none;
+      }
+
+      .desktop-nav {
+        display: flex;
+        gap: 32px;
+      }
+    }
+
+    /* push content below fixed header */
+    body {
+      padding-top: 90px;
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- ================= HEADER (DÙNG CHUNG) ================= -->
+<!-- ================= HEADER ================= -->
 <header class="site-header">
-  <div class="container">
+  <div class="header-inner">
 
     <a href="index.html" class="logo">
       <img src="assets/images/logo-gold.png" alt="The WANN Saigon">
     </a>
 
-    <nav class="main-nav">
+    <!-- Desktop nav -->
+    <nav class="main-nav desktop-nav">
       <a href="index.html">Home</a>
       <a href="index.html#party">Party</a>
       <a href="index.html#gallery">Gallery</a>
@@ -32,6 +136,15 @@
 
     <div class="menu-toggle">☰</div>
   </div>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="index.html#party">Party</a>
+    <a href="index.html#gallery">Gallery</a>
+    <a href="booking.html" class="active">Booking</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
 </header>
 
 <!-- ================= BOOKING HERO ================= -->
@@ -106,7 +219,6 @@
     >
       <input type="hidden" name="_subject" value="New Booking – The WANN Saigon">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
 
       <h2>Thông tin đặt chỗ</h2>
 
@@ -154,40 +266,13 @@
 
     <!-- CONTACT -->
     <div class="contact-card">
-
       <h2>Contact for Work</h2>
 
-      <div class="contact-item">
-        <span>📞 Booking Hotline</span>
-        <p>
-          <a href="tel:0919918178">0919 918 178</a>
-        </p>
-      </div>
-
-      <div class="contact-item">
-        <span>💬 Zalo</span>
-        <p>
-          <a href="https://zalo.me/0919918178" target="_blank">
-            0919 918 178
-          </a>
-        </p>
-      </div>
-
-      <div class="contact-item">
-        <span>📧 Email</span>
-        <p>booking@thewannsaigon.com</p>
-      </div>
-
-      <div class="contact-item">
-        <span>🤝 Business</span>
-        <p>business@thewannsaigon.com</p>
-      </div>
-
-      <div class="contact-item">
-        <span>📸 Media / PR</span>
-        <p>media@thewannsaigon.com</p>
-      </div>
-
+      <p>📞 <a href="tel:0919918178">0919 918 178</a></p>
+      <p>💬 <a href="https://zalo.me/0919918178" target="_blank">Zalo</a></p>
+      <p>📧 booking@thewannsaigon.com</p>
+      <p>🤝 business@thewannsaigon.com</p>
+      <p>📸 media@thewannsaigon.com</p>
     </div>
 
   </div>
@@ -200,6 +285,16 @@
     <a href="index.html" class="btn-outline">Quay về trang chủ</a>
   </div>
 </section>
+
+<!-- ================= MENU SCRIPT ================= -->
+<script>
+  const header = document.querySelector('.site-header');
+  const toggle = document.querySelector('.menu-toggle');
+
+  toggle.addEventListener('click', () => {
+    header.classList.toggle('open');
+  });
+</script>
 
 </body>
 </html>
