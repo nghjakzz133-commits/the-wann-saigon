@@ -1011,3 +1011,7 @@ button {
   box-shadow: 0 6px 20px rgba(212,175,55,0.35);
 }
 
+:root {
+  --bg-dark: #7a0000;   /* đỏ đô luxury */
+  --bg-soft: #1a0000;   /* layer đỏ sẫm */
+}
