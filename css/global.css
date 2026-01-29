@@ -1371,3 +1371,107 @@ button {
   font-size: 12px;
   opacity: 0.6;
 }
+/* ================================
+   MENU INTRO – LUXURY FIX
+   Only affect .menu-intro--luxury
+================================ */
+
+.menu-intro--luxury {
+  position: relative;
+  padding: clamp(64px, 10vw, 120px) 0;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(120, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.92) 65%
+    );
+  text-align: center;
+  overflow: hidden;
+}
+
+.menu-intro--luxury::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.85)
+  );
+  pointer-events: none;
+}
+
+.menu-intro--luxury .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Eyebrow */
+.menu-intro-eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(212, 175, 55, 0.75); /* gold */
+}
+
+/* Main text */
+.menu-intro-text {
+  max-width: 620px;
+  margin: 0 auto 36px;
+  font-size: clamp(16px, 2.2vw, 18px);
+  line-height: 1.75;
+  color: rgba(255,255,255,0.88);
+}
+
+/* Button – FIX BẤM ĐƯỢC */
+.menu-intro--luxury .btn-outline-gold {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(212,175,55,0.9);
+  background: rgba(0,0,0,0.45);
+  color: #d4af37;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .35s ease;
+}
+
+/* Hover */
+.menu-intro--luxury .btn-outline-gold:hover {
+  background: linear-gradient(
+    135deg,
+    #d4af37,
+    #b8962e
+  );
+  color: #000;
+  box-shadow:
+    0 12px 40px rgba(212,175,55,0.35);
+  transform: translateY(-2px);
+}
+
+/* Note */
+.menu-intro-note {
+  display: block;
+  margin-top: 18px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+}
+
+/* Mobile fine-tune */
+@media (max-width: 768px) {
+  .menu-intro-text {
+    padding: 0 12px;
+  }
+
+  .menu-intro--luxury .btn-outline-gold {
+    padding: 14px 28px;
+  }
+}
