@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Booking | The WANN Saigon</title>
 
-  <!-- CORE + BOOKING -->
+  <!-- GLOBAL + BOOKING CSS -->
   <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/booking.css" />
 
-  <meta name="description" content="Booking & Event tại The WANN Saigon – không gian nightlife cao cấp tại Sài Gòn." />
+  <meta name="description"
+        content="Booking & Event tại The WANN Saigon – không gian nightlife cao cấp tại Sài Gòn." />
 </head>
 <body>
 
@@ -29,71 +31,61 @@
       <a href="index.html#contact">Contact</a>
     </nav>
 
-    <div class="menu-toggle" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <div class="menu-toggle">☰</div>
 
   </div>
+
+  <!-- MOBILE MENU -->
+  <nav class="main-nav mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="index.html#party">Party</a>
+    <a href="index.html#gallery">Gallery</a>
+    <a href="booking.html" class="active">Booking</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
 </header>
 
 <!-- ================= BOOKING HERO ================= -->
 <section class="booking-hero">
   <div class="container">
-
     <span class="section-eyebrow">RESERVATION</span>
-
-    <h1>
-      Booking &<br>
-      Private Events
-    </h1>
-
+    <h1>Booking &<br>Private Events</h1>
     <p>
       Đặt bàn, tổ chức party riêng, sự kiện thương hiệu hoặc hợp tác truyền thông.<br>
       The WANN mang đến trải nghiệm nightlife chỉn chu & đẳng cấp.
     </p>
-
   </div>
 </section>
 
 <!-- ================= BOOKING HOST ================= -->
 <section class="booking-host">
   <div class="container">
-
     <div class="section-header">
       <span class="section-eyebrow">OUR HOST</span>
-      <h2>
-        Đội ngũ &<br>
-        Trải nghiệm Booking
-      </h2>
-      <p>
-        Mỗi buổi tiệc tại The WANN được chăm sóc bởi đội ngũ host chuyên nghiệp,
-        đảm bảo sự riêng tư, tinh tế và trọn vẹn cảm xúc.
-      </p>
+      <h2>Đội ngũ &<br>Trải nghiệm Booking</h2>
+      <p>Mỗi buổi tiệc tại The WANN được chăm sóc bởi đội ngũ host chuyên nghiệp,
+         đảm bảo sự riêng tư, tinh tế và trọn vẹn cảm xúc.</p>
     </div>
 
     <div class="host-gallery">
-
       <div class="host-col">
-        <img src="assets/images/booking-host/IMG_9466.jpeg">
-        <img src="assets/images/booking-host/IMG_9467.jpeg">
-        <img src="assets/images/booking-host/IMG_9468.jpeg">
+        <img src="assets/images/booking-host/IMG_9466.jpeg" alt="">
+        <img src="assets/images/booking-host/IMG_9467.jpeg" alt="">
+        <img src="assets/images/booking-host/IMG_9468.jpeg" alt="">
       </div>
 
       <div class="host-col offset">
-        <img src="assets/images/booking-host/IMG_9469.jpeg">
-        <img src="assets/images/booking-host/IMG_9470.jpeg">
-        <img src="assets/images/booking-host/IMG_9471.jpeg">
+        <img src="assets/images/booking-host/IMG_9469.jpeg" alt="">
+        <img src="assets/images/booking-host/IMG_9470.jpeg" alt="">
+        <img src="assets/images/booking-host/IMG_9471.jpeg" alt="">
       </div>
 
       <div class="host-col">
-        <img src="assets/images/booking-host/IMG_9472.jpeg">
-        <img src="assets/images/booking-host/IMG_9473.jpeg">
-        <img src="assets/images/booking-host/IMG_9474.jpeg">
-        <img src="assets/images/booking-host/IMG_9475.jpeg">
+        <img src="assets/images/booking-host/IMG_9472.jpeg" alt="">
+        <img src="assets/images/booking-host/IMG_9473.jpeg" alt="">
+        <img src="assets/images/booking-host/IMG_9474.jpeg" alt="">
+        <img src="assets/images/booking-host/IMG_9475.jpeg" alt="">
       </div>
-
     </div>
   </div>
 </section>
@@ -102,18 +94,14 @@
 <section class="booking-form">
   <div class="container booking-grid">
 
-    <!-- FORM -->
-    <form
-      action="https://formsubmit.co/booking@thewannsaigon.com"
-      method="POST"
-      class="form-card"
-    >
+    <!-- FORM CARD -->
+    <form action="https://formsubmit.co/booking@thewannsaigon.com"
+          method="POST"
+          class="form-card">
       <input type="hidden" name="_subject" value="New Booking – The WANN Saigon">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
 
       <h2>Thông tin đặt chỗ</h2>
-
       <div class="form-group">
         <label>Họ & Tên</label>
         <input type="text" name="name" required>
@@ -156,36 +144,14 @@
       </button>
     </form>
 
-    <!-- CONTACT -->
+    <!-- CONTACT CARD -->
     <div class="contact-card">
-
       <h2>Contact for Work</h2>
-
-      <div class="contact-item">
-        <span>📞 Booking Hotline</span>
-        <p><a href="tel:0919918178">0919 918 178</a></p>
-      </div>
-
-      <div class="contact-item">
-        <span>💬 Zalo</span>
-        <p><a href="https://zalo.me/0919918178" target="_blank">0919 918 178</a></p>
-      </div>
-
-      <div class="contact-item">
-        <span>📧 Email</span>
-        <p>booking@thewannsaigon.com</p>
-      </div>
-
-      <div class="contact-item">
-        <span>🤝 Business</span>
-        <p>business@thewannsaigon.com</p>
-      </div>
-
-      <div class="contact-item">
-        <span>📸 Media / PR</span>
-        <p>media@thewannsaigon.com</p>
-      </div>
-
+      <p>📞 <a href="tel:0919918178">0919 918 178</a></p>
+      <p>💬 <a href="https://zalo.me/0919918178" target="_blank">0919 918 178</a></p>
+      <p>📧 booking@thewannsaigon.com</p>
+      <p>🤝 business@thewannsaigon.com</p>
+      <p>📸 media@thewannsaigon.com</p>
     </div>
 
   </div>
@@ -193,11 +159,22 @@
 
 <!-- ================= FOOTER CTA ================= -->
 <section class="booking-cta">
-  <div class="container">
+  <div class="container text-center">
     <p>Đêm của bạn xứng đáng được chuẩn bị một cách hoàn hảo.</p>
     <a href="index.html" class="btn-outline">Quay về trang chủ</a>
   </div>
 </section>
+
+<script>
+  // MOBILE MENU TOGGLE
+  const header = document.querySelector('.site-header');
+  const toggle = document.querySelector('.menu-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+
+  toggle.addEventListener('click', () => {
+    mobileNav.classList.toggle('open');
+  });
+</script>
 
 </body>
 </html>
