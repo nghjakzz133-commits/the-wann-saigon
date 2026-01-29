@@ -34,8 +34,7 @@
         <a href="party.html" data-vi="Party" data-en="Party"></a>
         <a href="gallery.html" data-vi="Gallery" data-en="Gallery"></a>
         <a href="booking.html" data-vi="Booking" data-en="Booking"></a>
-        <a href="contact.html" class="active"
-           data-vi="Liên hệ" data-en="Contact"></a>
+        <a href="contact.html" class="active" data-vi="Liên hệ" data-en="Contact"></a>
       </nav>
 
       <div class="lang-switch">
@@ -45,7 +44,6 @@
 
       <div class="menu-toggle">☰</div>
     </div>
-
   </div>
 </header>
 
@@ -53,15 +51,15 @@
 <section class="hero contact-hero">
   <div class="hero-overlay"></div>
 
-  <div class="hero-content">
+  <div class="hero-content" data-reveal>
     <h1 class="hero-title">
       <span data-vi="LIÊN HỆ" data-en="CONTACT">LIÊN HỆ</span>
       <span class="accent" data-vi="THE WANN" data-en="THE WANN">THE WANN</span>
     </h1>
 
     <p class="hero-desc"
-       data-vi="Chúng tôi luôn sẵn sàng cho buổi tiệc tiếp theo của bạn."
-       data-en="We’re ready for your next unforgettable night.">
+       data-vi="Không chỉ đặt bàn – mà là đồng hành trọn vẹn cho đêm của bạn."
+       data-en="Not just booking — but accompanying your entire night.">
     </p>
   </div>
 </section>
@@ -70,7 +68,7 @@
 <section class="about">
   <div class="container">
 
-    <div class="section-header">
+    <div class="section-header" data-reveal>
       <span class="section-eyebrow"
             data-vi="Thông tin"
             data-en="Information">
@@ -83,44 +81,55 @@
 
       <div class="section-divider"></div>
 
-      <p data-vi="Liên hệ đặt bàn, private party hoặc hợp tác."
-         data-en="Contact us for reservations, private parties or collaborations.">
+      <p data-vi="Liên hệ đặt bàn, private party hoặc hợp tác thương hiệu."
+         data-en="Contact us for reservations, private parties or brand collaborations.">
       </p>
     </div>
 
     <!-- CONTACT LIST -->
-    <div class="party-cards contact-list">
+    <div class="party-cards contact-list" data-reveal>
 
       <div class="party-card">
-        📍 51 – 53 Bùi Thị Xuân, Quận 1,<br>TP.HCM
+        <span class="label">Location</span>
+        <p>51 – 53 Bùi Thị Xuân, Quận 1<br>TP. Hồ Chí Minh</p>
       </div>
 
       <div class="party-card">
-        📞 <a href="tel:0919918178">0919 918 178</a>
+        <span class="label">Hotline</span>
+        <p><a href="tel:0919918178">0919 918 178</a></p>
       </div>
 
       <div class="party-card">
-        💬 <a href="https://zalo.me/0919918178" target="_blank">Zalo Chat</a>
+        <span class="label">Zalo</span>
+        <p><a href="https://zalo.me/0919918178" target="_blank">Chat trực tiếp</a></p>
       </div>
 
-      <!-- FACEBOOK – MAIN CONTACT -->
-      <div class="party-card">
-        📘 
-        <a href="https://www.facebook.com/share/1CDKPjfWuV/?mibextid=wwXIfr"
-           target="_blank">
-          Fanpage Facebook chính thức
-        </a>
+      <!-- FACEBOOK OFFICIAL -->
+      <div class="party-card facebook-card">
+        <img
+          src="https://graph.facebook.com/100088087228206/picture?type=large"
+          alt="The WANN Saigon Facebook"
+          class="fb-avatar"
+        />
+        <div class="fb-info">
+          <span class="label">Official Facebook</span>
+          <p>
+            <a href="https://www.facebook.com/share/1CDKPjfWuV/?mibextid=wwXIfr"
+               target="_blank">
+              The WANN Saigon
+            </a>
+          </p>
+        </div>
       </div>
 
     </div>
-
   </div>
 </section>
 
 <!-- ================= MAP ================= -->
-<section class="home-proof">
+<section class="home-proof" data-reveal>
   <p data-vi="Tọa lạc ngay trung tâm Sài Gòn – thuận tiện cho mọi cuộc hẹn."
-     data-en="Located in the heart of Saigon – perfect for every meeting.">
+     data-en="Located in the heart of Saigon — perfect for every meeting.">
   </p>
 
   <div class="container">
@@ -129,17 +138,16 @@
       width="100%"
       height="360"
       style="border:0;"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
+      loading="lazy">
     </iframe>
   </div>
 </section>
 
 <!-- ================= CONTACT CTA ================= -->
 <section class="party">
-  <div class="container text-center">
-    <p data-vi="Đêm của bạn bắt đầu từ một tin nhắn."
-       data-en="Your night starts with a single message.">
+  <div class="container text-center" data-reveal>
+    <p data-vi="Đêm của bạn bắt đầu từ một cuộc trò chuyện."
+       data-en="Your night starts with a conversation.">
     </p>
 
     <a href="https://www.facebook.com/share/1CDKPjfWuV/?mibextid=wwXIfr"
@@ -147,7 +155,6 @@
        class="btn-primary"
        data-vi="Liên hệ Facebook"
        data-en="Contact via Facebook">
-       Liên hệ Facebook
     </a>
   </div>
 </section>
@@ -167,11 +174,11 @@
      data-vi="Gọi đặt Party" data-en="Call to Book">
      Gọi đặt Party
   </a>
-  <a href="https://www.facebook.com/share/1CDKPjfWuV/?mibextid=wwXIfr"
+  <a href="https://zalo.me/0919918178"
      target="_blank"
      class="cta-secondary"
-     data-vi="Facebook" data-en="Facebook">
-     Facebook
+     data-vi="Zalo" data-en="Zalo">
+     Zalo
   </a>
 </div>
 
