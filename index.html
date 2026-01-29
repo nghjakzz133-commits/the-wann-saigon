@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>The WANN Saigon | Restaurant • Lounge • Party</title>
 
   <!-- SEO -->
   <meta name="description"
-    content="The WANN Saigon – Nhà hàng kết hợp lounge & party tại trung tâm Quận 1. Không gian sang trọng, phù hợp tiệc riêng, sinh nhật và gặp gỡ bạn bè." />
+    content="The WANN Saigon – Nhà hàng kết hợp lounge & party tại trung tâm Quận 1. Không gian sang trọng cho private party và nightlife tinh tế." />
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/core.css" />
@@ -20,165 +21,132 @@
 <header class="site-header">
   <div class="container">
 
-    <div class="logo shimmer">
+    <a href="#home" class="logo shimmer" aria-label="The WANN Saigon">
       <img src="assets/images/logo/logo.png" alt="The WANN Saigon">
-    </div>
+    </a>
 
-    <nav class="main-nav">
-      <a href="#home" data-vi="Trang chủ" data-en="Home"></a>
-      <a href="party.html" data-vi="Party" data-en="Party"></a>
-      <a href="gallery.html" data-vi="Gallery" data-en="Gallery"></a>
-      <a href="booking.html" data-vi="Booking" data-en="Booking"></a>
-      <a href="contact.html" data-vi="Liên hệ" data-en="Contact"></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#home" data-vi="Trang chủ" data-en="Home">Trang chủ</a>
+      <a href="party.html" data-vi="Party" data-en="Party">Party</a>
+      <a href="gallery.html" data-vi="Gallery" data-en="Gallery">Gallery</a>
+      <a href="booking.html" data-vi="Booking" data-en="Booking">Booking</a>
+      <a href="contact.html" data-vi="Liên hệ" data-en="Contact">Liên hệ</a>
     </nav>
 
     <div class="lang-switch">
-      <button data-lang="vi">VI</button>
-      <button data-lang="en">EN</button>
+      <button data-lang="vi" aria-label="Vietnamese">VI</button>
+      <button data-lang="en" aria-label="English">EN</button>
     </div>
 
-    <div class="menu-toggle">☰</div>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
   </div>
 </header>
 
 <!-- ================= HERO ================= -->
 <section id="home" class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
+  <video autoplay muted loop playsinline class="hero-video"
+         poster="assets/images/hero/poster.jpg"
+         aria-hidden="true">
     <source src="assets/videos/hero/hero.mp4" type="video/mp4">
   </video>
 
   <div class="hero-overlay"></div>
 
-  <div class="hero-content">
+  <div class="hero-content" data-reveal>
     <h1 class="hero-title">
-  <span data-vi="THE" data-en="THE"></span>
-  <span class="accent" data-vi="WANN" data-en="WANN"></span>
-  <span data-vi="SAIGON" data-en="SAIGON"></span>
-</h1>
+      <span data-vi="THE" data-en="THE">THE</span>
+      <span class="accent" data-vi="WANN" data-en="WANN">WANN</span>
+      <span data-vi="SAIGON" data-en="SAIGON">SAIGON</span>
+    </h1>
 
     <p class="tagline"
       data-vi="Nhà hàng • Lounge • Party"
-      data-en="Restaurant • Lounge • Party"></p>
+      data-en="Restaurant • Lounge • Party">
+      Nhà hàng • Lounge • Party
+    </p>
 
     <p class="hero-desc"
-      data-vi="Không gian nơi ẩm thực, ánh sáng và âm nhạc hòa quyện, tạo nên trải nghiệm đêm tinh tế giữa trung tâm Sài Gòn."
-      data-en="A refined night experience where cuisine, lighting, and music blend seamlessly in the heart of Saigon.">
+      data-vi="Không gian nơi ẩm thực, ánh sáng và âm nhạc hòa quyện."
+      data-en="A refined night experience in the heart of Saigon.">
+      Không gian nơi ẩm thực, ánh sáng và âm nhạc hòa quyện.
     </p>
 
     <div class="hero-cta">
       <a href="booking.html" class="btn-primary"
-        data-vi="Đặt Party" data-en="Book a Party"></a>
+        data-vi="Đặt Party" data-en="Book a Party">Đặt Party</a>
       <a href="gallery.html" class="btn-secondary"
-        data-vi="Xem không gian" data-en="View the Space"></a>
+        data-vi="Xem không gian" data-en="View the Space">Xem không gian</a>
     </div>
   </div>
 </section>
+
 <!-- ================= PROOF ================= -->
-<section class="home-proof">
+<section class="home-proof" data-reveal>
   <p data-vi="Điểm đến nightlife được tin chọn tại trung tâm Sài Gòn"
      data-en="A trusted nightlife destination in the heart of Saigon">
+     Điểm đến nightlife được tin chọn tại trung tâm Sài Gòn
   </p>
 </section>
-<!-- ================= ABOUT ================= -->
+
 <!-- ================= ABOUT ================= -->
 <section class="about">
   <div class="container">
 
-    <h2 data-vi="The WANN Saigon – Không gian của cảm xúc"
-        data-en="The WANN Saigon – A Space of Emotions"></h2>
+    <div class="section-header" data-reveal>
+      <h2 data-vi="The WANN Saigon – Không gian của cảm xúc"
+          data-en="The WANN Saigon – A Space of Emotions">
+          The WANN Saigon – Không gian của cảm xúc
+      </h2>
+      <p data-vi="Nơi ẩm thực, ánh sáng và âm nhạc giao thoa."
+         data-en="Where cuisine, lighting, and music come together.">
+         Nơi ẩm thực, ánh sáng và âm nhạc giao thoa.
+      </p>
+    </div>
 
-    <p data-vi="Nơi ẩm thực, ánh sáng và âm nhạc giao thoa."
-       data-en="Where cuisine, lighting, and music come together."></p>
-
-    <div class="home-gallery horizontal-scroll">
-      <img src="assets/images/space/IMG_8777.jpeg">
-      <img src="assets/images/space/IMG_8001.jpeg">
-      <img src="assets/images/space/IMG_9082.jpeg">
+    <div class="home-gallery horizontal-scroll" data-reveal>
+      <img src="assets/images/space/IMG_8777.jpeg" alt="">
+      <img src="assets/images/space/IMG_8001.jpeg" alt="">
+      <img src="assets/images/space/IMG_9082.jpeg" alt="">
     </div>
 
   </div>
 </section>
 
-<!-- ================= PARTY ================= -->
 <!-- ================= PARTY ================= -->
 <section class="party">
   <div class="container">
 
-    <h2 data-vi="Party tại The WANN"
-        data-en="Party at The WANN"></h2>
-
-    <p data-vi="Không gian lý tưởng cho sinh nhật, private party và những dịp đặc biệt."
-       data-en="An ideal space for birthdays, private parties and special nights."></p>
-
-    <div class="home-gallery horizontal-scroll">
-      <img src="assets/images/party/IMG_8019.jpeg">
-      <img src="assets/images/party/IMG_8023.jpeg">
-      <img src="assets/images/action/IMG_8625.jpeg">
+    <div class="section-header" data-reveal>
+      <h2 data-vi="Party tại The WANN"
+          data-en="Party at The WANN">Party tại The WANN</h2>
+      <p data-vi="Không gian lý tưởng cho sinh nhật và private party."
+         data-en="An ideal space for private parties and celebrations.">
+         Không gian lý tưởng cho sinh nhật và private party.
+      </p>
     </div>
 
-    <div class="party-cards">
-      <div class="party-card" data-vi="Sinh nhật" data-en="Birthday Party"></div>
-      <div class="party-card" data-vi="Private Party" data-en="Private Party"></div>
-      <div class="party-card" data-vi="Tiệc nhóm" data-en="Group Party"></div>
-      <div class="party-card" data-vi="Đêm kỷ niệm" data-en="Celebration Night"></div>
+    <div class="home-gallery horizontal-scroll" data-reveal>
+      <img src="assets/images/party/IMG_8019.jpeg" alt="">
+      <img src="assets/images/party/IMG_8023.jpeg" alt="">
+      <img src="assets/images/action/IMG_8625.jpeg" alt="">
     </div>
 
-    <a href="party.html" class="btn-primary"
-       data-vi="Khám phá Party" data-en="Explore Party"></a>
+    <div class="party-cards" data-reveal>
+      <div class="party-card" data-vi="Sinh nhật" data-en="Birthday Party">Sinh nhật</div>
+      <div class="party-card" data-vi="Private Party" data-en="Private Party">Private Party</div>
+      <div class="party-card" data-vi="Tiệc nhóm" data-en="Group Party">Tiệc nhóm</div>
+      <div class="party-card" data-vi="Đêm kỷ niệm" data-en="Celebration Night">Đêm kỷ niệm</div>
+    </div>
+
+    <a href="party.html" class="btn-primary" data-reveal
+       data-vi="Khám phá Party" data-en="Explore Party">
+       Khám phá Party
+    </a>
 
   </div>
 </section>
 
-<!-- ================= BOOKING ================= -->
-<!-- ================= BOOKING ================= -->
-<section class="booking-cta">
-  <div class="container">
-
-    <h2 data-vi="Đặt Party tại The WANN Saigon"
-        data-en="Book a Party at The WANN Saigon"></h2>
-
-    <p data-vi="Liên hệ trực tiếp để được tư vấn nhanh và riêng."
-       data-en="Contact us directly for fast and personal consultation."></p>
-
-    <div class="booking-buttons">
-      <a href="tel:0919918178" class="btn-primary"
-         data-vi="Gọi Hotline" data-en="Call Hotline"></a>
-
-      <a href="https://zalo.me/0919918178" target="_blank"
-         class="btn-secondary"
-         data-vi="Zalo Booking" data-en="Zalo Booking"></a>
-
-      <a href="https://www.facebook.com/share/17kpga1EJn/?mibextid=wwXIfr"
-         target="_blank" class="btn-secondary"
-         data-vi="Fanpage" data-en="Fanpage"></a>
-    </div>
-
-  </div>
-</section>
-<section class="host">
-  <div class="container">
-    <h2 data-vi="Booking Host đồng hành" data-en="Your Booking Host"></h2>
-    <p
-      data-vi="Luôn trực tiếp tiếp đón và hỗ trợ xuyên suốt buổi tiệc."
-      data-en="Personally welcoming and supporting you throughout the night.">
-    </p>
-
-    <div class="home-gallery horizontal-scroll">
-  <img src="assets/images/booking-host/IMG_9466.jpeg" alt="Booking host">
-  <img src="assets/images/booking-host/IMG_9467.jpeg" alt="Host welcoming guests">
-  <img src="assets/images/booking-host/IMG_9468.jpeg" alt="Host supporting party">
-  <img src="assets/images/booking-host/IMG_9469.jpeg" alt="Guest experience">
-  <img src="assets/images/booking-host/IMG_9470.jpeg" alt="Night service">
-  <img src="assets/images/booking-host/IMG_9471.jpeg" alt="Party companion">
-  <img src="assets/images/booking-host/IMG_9472.jpeg" alt="Private party support">
-</div>
-    <p class="caption"
- data-vi="Không chỉ đặt bàn – mà là đồng hành trọn vẹn."
- data-en="Not just booking – but accompanying your entire night.">
-</p>
-  </div>
-</section>
-
+<!-- ================= FOOTER ================= -->
 <footer class="site-footer">
   <div class="container">
     <p>The WANN Saigon</p>
@@ -187,17 +155,19 @@
   </div>
 </footer>
 
-<script src="js/main.js"></script>
 <!-- ================= STICKY CTA (MOBILE) ================= -->
 <div class="sticky-cta">
   <a href="tel:0919918178" class="cta-primary"
-     data-vi="Gọi đặt Party"
-     data-en="Call to Book"></a>
-
+     data-vi="Gọi đặt Party" data-en="Call to Book">
+     Gọi đặt Party
+  </a>
   <a href="https://zalo.me/0919918178" target="_blank"
      class="cta-secondary"
-     data-vi="Zalo"
-     data-en="Zalo"></a>
+     data-vi="Zalo" data-en="Zalo">
+     Zalo
+  </a>
 </div>
+
+<script src="js/main.js"></script>
 </body>
 </html>
