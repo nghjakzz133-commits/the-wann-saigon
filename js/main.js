@@ -1,5 +1,5 @@
 /* =========================================================
-   THE WANN SAIGON – LUXURY JAVASCRIPT
+   THE WANN SAIGON – LUXURY JAVASCRIPT (V2)
    Purpose: UI polish • Smooth interaction • Bilingual
    Rule: Clean – Stable – Easy to maintain
 ========================================================= */
@@ -7,164 +7,177 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* =====================================================
-     1. HEADER SCROLL EFFECT
+     GLOBAL FLAGS
   ===================================================== */
-  const header = document.querySelector('.site-header');
-
-  if (header) {
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 60);
-    });
-  }
+  const reduceMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
 
   /* =====================================================
-     2. FADE-IN OBSERVER (SECTION + ITEMS)
-     NOTE:
-     - Dùng chung 1 observer
-     - Chạy 1 lần cho sang
+     1. HEADER + STICKY CTA (SCROLL STATE)
   ===================================================== */
-  const fadeTargets = document.querySelectorAll('section, .fade-item');
+  const header = document.querySelector('.site-header');
+  const heroSection = document.querySelector('.hero');
+  const stickyCTA = document.querySelector('.sticky-cta');
 
-  if (fadeTargets.length) {
-    const fadeObserver = new IntersectionObserver(
+  function handleScroll() {
+    const y = window.scrollY;
+
+    // Header background
+    if (header) {
+      header.classList.toggle('scrolled', y > 60);
+    }
+
+    // Sticky CTA after hero
+    if (heroSection && stickyCTA) {
+      const heroBottom = heroSection.getBoundingClientRect().bottom;
+      stickyCTA.classList.toggle('show', heroBottom < 0);
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+
+  /* =====================================================
+     2. REVEAL ON SCROLL (INTERSECTION OBSERVER)
+     Usage: data-reveal
+  ===================================================== */
+  function initReveal() {
+    const targets = document.querySelectorAll('[data-reveal]');
+    if (!targets.length) return;
+
+    if (reduceMotion) {
+      targets.forEach(el => el.classList.add('show'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('show');
-            fadeObserver.unobserve(entry.target);
+            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.2 }
     );
 
-    fadeTargets.forEach(el => {
+    targets.forEach(el => {
       el.classList.add('fade');
-      fadeObserver.observe(el);
+      observer.observe(el);
     });
   }
 
-  /* =====================================================
-     3. SMOOTH SCROLL (ANCHOR)
-  ===================================================== */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
 
   /* =====================================================
-     4. BUTTON MICRO HOVER
+     3. HERO TITLE INTRO (SUBTLE)
   ===================================================== */
-  document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
-    btn.addEventListener('mouseenter', () => {
-      btn.style.transform = 'translateY(-2px)';
-    });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = 'translateY(0)';
-    });
-  });
+  function initHeroIntro() {
+    if (reduceMotion) return;
+    const heroTitle = document.querySelector('.hero-title');
+    if (!heroTitle) return;
 
-  /* =====================================================
-     5. LANGUAGE SWITCH (VI / EN)
-  ===================================================== */
-  const langButtons = document.querySelectorAll('[data-lang]');
-  const transEls = document.querySelectorAll('[data-vi][data-en]');
-
-  function setLanguage(lang) {
-    transEls.forEach(el => {
-      el.textContent = el.getAttribute(`data-${lang}`);
-    });
-    localStorage.setItem('lang', lang);
+    setTimeout(() => {
+      heroTitle.classList.add('show');
+    }, 300);
   }
 
-  langButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      setLanguage(btn.getAttribute('data-lang'));
-    });
-  });
-
-  setLanguage(localStorage.getItem('lang') || 'vi');
 
   /* =====================================================
-     6. MOBILE MENU TOGGLE
+     4. LANGUAGE SWITCH (VI / EN)
   ===================================================== */
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mainNav = document.querySelector('.main-nav');
+  function initLanguage() {
+    const langButtons = document.querySelectorAll('[data-lang]');
+    const transEls = document.querySelectorAll('[data-vi][data-en]');
 
-  if (menuToggle && mainNav) {
+    if (!langButtons.length || !transEls.length) return;
+
+    function setLanguage(lang) {
+      transEls.forEach(el => {
+        el.innerHTML = el.dataset[lang] || el.dataset.vi;
+      });
+      document.documentElement.setAttribute('lang', lang);
+      localStorage.setItem('lang', lang);
+    }
+
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        setLanguage(btn.dataset.lang);
+      });
+    });
+
+    setLanguage(localStorage.getItem('lang') || 'vi');
+  }
+
+
+  /* =====================================================
+     5. MOBILE MENU TOGGLE
+  ===================================================== */
+  function initMobileMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    if (!menuToggle || !mainNav) return;
+
     menuToggle.addEventListener('click', () => {
       mainNav.classList.toggle('open');
     });
-  }
 
-  /* =====================================================
-     7. HERO TITLE DELAY (NHẸ)
-  ===================================================== */
-  const heroTitle = document.querySelector('.hero-title');
-  if (heroTitle) {
-    setTimeout(() => heroTitle.classList.add('show'), 300);
-  }
-
-  /* =====================================================
-     8. STICKY CTA – MOBILE (MICRO EFFECT)
-     NOTE:
-     - Chỉ hiện khi scroll qua hero
-     - Dùng class `.show` để animate (CSS control)
-  ===================================================== */
-  const stickyCTA = document.querySelector('.sticky-cta');
-  const heroSection = document.querySelector('.hero');
-
-  if (stickyCTA && heroSection) {
-    window.addEventListener('scroll', () => {
-      const heroBottom = heroSection.getBoundingClientRect().bottom;
-
-      if (heroBottom < 0) {
-        stickyCTA.classList.add('show');
-      } else {
-        stickyCTA.classList.remove('show');
-      }
+    // Auto-close when click link
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+      });
     });
   }
 
-});
 
-/* =====================================================
-   9. HORIZONTAL DRAG SCROLL (DESKTOP)
-   NOTE:
-   - Không ảnh hưởng mobile
-===================================================== */
-document.querySelectorAll('.horizontal-scroll').forEach(gallery => {
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+  /* =====================================================
+     6. HORIZONTAL DRAG SCROLL (DESKTOP)
+  ===================================================== */
+  function initHorizontalDrag() {
+    document.querySelectorAll('.horizontal-scroll').forEach(gallery => {
+      let isDown = false;
+      let startX;
+      let scrollLeft;
 
-  gallery.addEventListener('mousedown', e => {
-    isDown = true;
-    gallery.classList.add('dragging');
-    startX = e.pageX - gallery.offsetLeft;
-    scrollLeft = gallery.scrollLeft;
-  });
+      gallery.addEventListener('mousedown', e => {
+        isDown = true;
+        gallery.classList.add('dragging');
+        startX = e.pageX - gallery.offsetLeft;
+        scrollLeft = gallery.scrollLeft;
+      });
 
-  gallery.addEventListener('mouseleave', () => {
-    isDown = false;
-    gallery.classList.remove('dragging');
-  });
+      gallery.addEventListener('mouseleave', () => {
+        isDown = false;
+        gallery.classList.remove('dragging');
+      });
 
-  gallery.addEventListener('mouseup', () => {
-    isDown = false;
-    gallery.classList.remove('dragging');
-  });
+      gallery.addEventListener('mouseup', () => {
+        isDown = false;
+        gallery.classList.remove('dragging');
+      });
 
-  gallery.addEventListener('mousemove', e => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - gallery.offsetLeft;
-    const walk = (x - startX) * 1.6;
-    gallery.scrollLeft = scrollLeft - walk;
-  });
+      gallery.addEventListener('mousemove', e => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - gallery.offsetLeft;
+        const walk = (x - startX) * 1.6;
+        gallery.scrollLeft = scrollLeft - walk;
+      });
+    });
+  }
+
+
+  /* =====================================================
+     INIT
+  ===================================================== */
+  initReveal();
+  initHeroIntro();
+  initLanguage();
+  initMobileMenu();
+  initHorizontalDrag();
+  handleScroll(); // initial state
+
 });
