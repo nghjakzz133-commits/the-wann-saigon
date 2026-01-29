@@ -795,3 +795,108 @@ section p {
     border-radius: 16px;
   }
 }
+/* ================= LUXURY BOOKING FORM ================= */
+
+.luxury-form {
+  background: linear-gradient(
+    180deg,
+    rgba(10,15,20,0.85),
+    rgba(5,8,12,0.95)
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 215, 120, 0.15);
+  padding: 48px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.form-title {
+  font-size: 28px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.form-subtitle {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 32px;
+}
+
+.luxury-form .form-group {
+  margin-bottom: 24px;
+}
+
+.luxury-form label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 6px;
+}
+
+.luxury-form input,
+.luxury-form select,
+.luxury-form textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  padding: 10px 4px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+.luxury-form input:focus,
+.luxury-form select:focus,
+.luxury-form textarea:focus {
+  border-bottom-color: #d6b36a;
+}
+
+.luxury-form select option {
+  background: #0b0f14;
+  color: #fff;
+}
+
+.luxury-form textarea {
+  resize: none;
+}
+
+.luxury-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* BUTTON */
+.btn-luxury {
+  width: 100%;
+  margin-top: 32px;
+  padding: 16px;
+  background: transparent;
+  border: 1px solid #d6b36a;
+  color: #d6b36a;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-luxury:hover {
+  background: #d6b36a;
+  color: #000;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .luxury-form {
+    padding: 32px 24px;
+  }
+
+  .luxury-form .form-row {
+    grid-template-columns: 1fr;
+  }
+}
