@@ -745,3 +745,53 @@ section p {
     border-radius: 14px;
   }
 }
+/* =====================================================
+   ABOUT – MOBILE LUXURY FIX
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .about {
+    padding-top: 72px;
+    padding-bottom: 96px;
+  }
+
+  /* Eyebrow */
+  .section-eyebrow {
+    font-size: 10px;
+    letter-spacing: .32em;
+    margin-bottom: 14px;
+  }
+
+  /* Title */
+  .section-header--luxury h2 {
+    font-size: 30px;
+    line-height: 1.25;
+    letter-spacing: .04em;
+  }
+
+  /* Force elegant line break */
+  .section-header--luxury h2 br {
+    display: none;
+  }
+
+  /* Description */
+  .section-header--luxury p {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: rgba(255,255,255,.68);
+    padding: 0 12px;
+  }
+
+  /* Gallery layout */
+  .luxury-gallery {
+    margin-top: 40px;
+    gap: 16px;
+  }
+
+  .luxury-gallery img {
+    height: 220px;
+    border-radius: 16px;
+  }
+}
