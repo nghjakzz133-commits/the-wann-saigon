@@ -795,3 +795,160 @@ section p {
     border-radius: 16px;
   }
 }
+/* =====================================================
+   BOOKING PAGE – LUXURY NIGHTLIFE
+===================================================== */
+
+.booking-hero {
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.booking-hero h1 {
+  font-size: clamp(36px, 6vw, 56px);
+  letter-spacing: .08em;
+  margin-bottom: 20px;
+}
+
+.booking-hero p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: rgba(255,255,255,.7);
+  line-height: 1.9;
+}
+
+/* Grid */
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 48px;
+}
+
+/* Form */
+.form-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.form-card h2 {
+  margin-bottom: 28px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: .12em;
+  margin-bottom: 8px;
+  color: rgba(255,255,255,.7);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(0,0,0,.4);
+  border: 1px solid rgba(255,255,255,.12);
+  color: #fff;
+  border-radius: 12px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Contact */
+.contact-card {
+  padding: 40px;
+  border-left: 1px solid rgba(255,255,255,.08);
+}
+
+.contact-item {
+  margin-bottom: 22px;
+}
+
+.contact-item span {
+  display: block;
+  font-size: 12px;
+  letter-spacing: .14em;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 6px;
+}
+
+/* CTA */
+.booking-cta {
+  padding: 80px 0;
+  text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .booking-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,.08);
+    margin-top: 40px;
+  }
+}
+/* =====================================================
+   BOOKING HOST GALLERY
+===================================================== */
+
+.booking-host {
+  padding: 120px 0;
+}
+
+.booking-host .section-header {
+  max-width: 520px;
+  margin-bottom: 64px;
+}
+
+.host-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.host-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.host-col.offset {
+  margin-top: 80px;
+}
+
+.host-col img {
+  border-radius: 20px;
+  object-fit: cover;
+  filter: brightness(.95) contrast(1.05);
+  transition: transform .6s ease, filter .6s ease;
+}
+
+.host-col img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .host-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .host-col.offset {
+    margin-top: 0;
+  }
+}
