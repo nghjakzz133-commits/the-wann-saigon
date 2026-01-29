@@ -969,3 +969,14 @@ section p {
 body {
   background-color: #8B0000;
 }
+/* FORCE RED THEME */
+body,
+.site-wrapper,
+.main,
+.page,
+.section,
+.hero,
+.home,
+.home-section {
+  background: linear-gradient(180deg, #6b0000 0%, #0b0b0b 100%) !important;
+}
