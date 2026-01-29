@@ -1,84 +1,81 @@
 /* =====================================================
    BOOKING.CSS – THE WANN SAIGON
-   DEPENDS ON: core.css + global.css
    PURPOSE:
-   - Luxury / Nightlife / Calm confidence
-   - Clean layout, emotional spacing
+   - Đồng bộ vibe với HOME (luxury / nightlife)
+   - Không override global.css
 ===================================================== */
 
-
 /* =====================================================
-   BOOKING HERO
+   1. BOOKING HERO
 ===================================================== */
 
 .booking-hero {
-  min-height: 80vh;
-  padding-top: 72px;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   background:
-    radial-gradient(
-      900px 400px at 50% -20%,
-      rgba(201,162,77,.12),
-      transparent 60%
-    ),
     linear-gradient(
-      180deg,
-      var(--bg-dark),
-      var(--bg-soft)
-    );
+      to bottom,
+      rgba(0,0,0,.75),
+      rgba(0,0,0,.95)
+    ),
+    url("../assets/images/hero/poster.jpg") center / cover no-repeat;
 }
 
 .booking-hero .container {
   text-align: center;
 }
 
+.booking-hero .section-eyebrow {
+  margin-bottom: 18px;
+}
+
 .booking-hero h1 {
   font-family: var(--font-title);
-  font-size: clamp(40px, 6vw, 72px);
-  letter-spacing: .12em;
-  margin-bottom: 24px;
+  font-size: clamp(36px, 7vw, 72px);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 28px;
 }
 
 .booking-hero p {
-  max-width: 560px;
+  max-width: 620px;
   margin: 0 auto;
   font-size: 15px;
   line-height: 1.9;
   color: rgba(255,255,255,.7);
 }
 
-
 /* =====================================================
-   BOOKING HOST
+   2. BOOKING HOST
 ===================================================== */
 
 .booking-host {
   background: linear-gradient(
     180deg,
-    var(--bg-soft),
-    var(--bg-dark)
+    var(--bg-dark),
+    var(--bg-soft)
   );
 }
 
 .booking-host .section-header {
-  max-width: 720px;
-  margin: 0 auto 64px;
   text-align: center;
+  margin-bottom: 56px;
 }
 
-.booking-host .section-header h2 {
-  color: var(--accent-gold);
+.booking-host h2 {
+  font-family: var(--font-title);
+  letter-spacing: .08em;
+  margin-bottom: 22px;
 }
 
-.booking-host .section-header p {
-  margin-top: 16px;
-  font-size: 15px;
-  line-height: 1.85;
-  color: rgba(255,255,255,.75);
+.booking-host p {
+  max-width: 560px;
+  color: rgba(255,255,255,.7);
 }
 
-/* Host gallery */
+/* ================= HOST GALLERY ================= */
 
 .host-gallery {
   display: grid;
@@ -93,104 +90,93 @@
 }
 
 .host-col.offset {
-  margin-top: 48px;
+  margin-top: 64px;
 }
 
 .host-gallery img {
   width: 100%;
-  border-radius: 18px;
+  border-radius: 16px;
   object-fit: cover;
-  filter: brightness(.88) contrast(1.05);
+  filter: brightness(.9) contrast(1.05);
   transition:
     transform .6s cubic-bezier(.2,.8,.2,1),
     filter .6s ease,
     box-shadow .6s ease;
 }
 
-@media (hover: hover) {
-  .host-gallery img:hover {
-    transform: scale(1.04);
-    filter: brightness(1) contrast(1.1);
-    box-shadow:
-      0 30px 80px rgba(0,0,0,.6),
-      0 0 0 1px rgba(201,162,77,.18);
-  }
+.host-gallery img:hover {
+  transform: scale(1.05);
+  filter: brightness(1) contrast(1.1);
+  box-shadow:
+    0 24px 60px rgba(0,0,0,.6),
+    0 0 0 1px rgba(201,162,77,.15);
 }
 
-
 /* =====================================================
-   BOOKING FORM SECTION
+   3. BOOKING FORM
 ===================================================== */
 
 .booking-form {
-  background:
-    radial-gradient(
-      800px 400px at 50% 0%,
+  background: radial-gradient(
+      800px 400px at 50% -10%,
       rgba(201,162,77,.08),
-      transparent 65%
+      transparent 60%
     ),
     var(--bg-dark);
 }
 
 .booking-grid {
   display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 48px;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 56px;
   align-items: start;
 }
 
 /* ================= FORM CARD ================= */
 
 .form-card {
-  background: rgba(0,0,0,.45);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(201,162,77,.25);
+  background: color-mix(
+    in srgb,
+    var(--bg-soft) 90%,
+    transparent
+  );
+  padding: 48px;
   border-radius: 20px;
-  padding: 40px;
+  box-shadow: 0 40px 120px rgba(0,0,0,.55);
 }
 
 .form-card h2 {
   margin-bottom: 32px;
-  font-size: 20px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
+  font-family: var(--font-title);
+  letter-spacing: .08em;
   color: var(--accent-gold);
 }
 
-/* Inputs */
+/* Fields */
 
 .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   margin-bottom: 22px;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
 .form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 11px;
-  letter-spacing: .18em;
+  font-size: 12px;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.65);
+  color: rgba(255,255,255,.55);
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-  width: 100%;
+  background: rgba(0,0,0,.4);
+  border: 1px solid rgba(255,255,255,.1);
   padding: 12px 14px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.18);
-  border-radius: 10px;
-  color: var(--text-main);
+  border-radius: 8px;
+  color: #fff;
   font-size: 14px;
-  transition:
-    border-color .25s ease,
-    background .25s ease;
 }
 
 .form-group input:focus,
@@ -198,109 +184,110 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--accent-gold);
-  background: rgba(255,255,255,.06);
 }
 
-/* Button */
+/* Row */
 
-.btn-primary.full {
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* Submit */
+
+.form-card .btn-primary.full {
+  margin-top: 18px;
   width: 100%;
-  margin-top: 12px;
-  padding: 16px;
-  letter-spacing: .18em;
 }
 
-
-/* ================= CONTACT CARD ================= */
+/* =====================================================
+   4. CONTACT CARD
+===================================================== */
 
 .contact-card {
-  background: rgba(0,0,0,.35);
-  border: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(
+    180deg,
+    rgba(201,162,77,.12),
+    rgba(0,0,0,0)
+  );
+  border: 1px solid rgba(201,162,77,.25);
+  padding: 42px;
   border-radius: 20px;
-  padding: 36px;
 }
 
 .contact-card h2 {
+  font-family: var(--font-title);
+  letter-spacing: .08em;
   margin-bottom: 28px;
-  font-size: 18px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-}
-
-.contact-item {
-  margin-bottom: 22px;
-}
-
-.contact-item span {
-  display: block;
-  font-size: 12px;
-  letter-spacing: .12em;
-  color: rgba(255,255,255,.6);
-  margin-bottom: 6px;
-}
-
-.contact-item a,
-.contact-item p {
-  font-size: 15px;
   color: var(--accent-gold);
 }
 
+.contact-card p {
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: rgba(255,255,255,.75);
+}
+
+.contact-card a {
+  color: var(--accent-gold);
+}
 
 /* =====================================================
-   BOOKING CTA
+   5. BOOKING CTA
 ===================================================== */
 
 .booking-cta {
   background: linear-gradient(
     180deg,
-    var(--bg-dark),
-    #000
+    var(--bg-soft),
+    var(--bg-dark)
   );
   text-align: center;
-  padding: 72px 0;
 }
 
 .booking-cta p {
-  font-size: 16px;
-  margin-bottom: 24px;
+  font-size: 15px;
+  margin-bottom: 28px;
   color: rgba(255,255,255,.75);
 }
 
-.booking-cta .btn-outline {
-  padding: 14px 32px;
-  border: 1px solid var(--accent-gold);
-  color: var(--accent-gold);
-  letter-spacing: .16em;
-  text-transform: uppercase;
-}
-
-
 /* =====================================================
-   MOBILE
+   6. MOBILE
 ===================================================== */
 
 @media (max-width: 768px) {
 
   .booking-hero {
-    min-height: 70vh;
+    min-height: 80vh;
   }
 
-  .booking-grid {
-    grid-template-columns: 1fr;
+  .booking-hero h1 {
+    font-size: 42px;
+    letter-spacing: .14em;
+  }
+
+  .booking-hero p {
+    font-size: 14px;
+    padding: 0 12px;
   }
 
   .host-gallery {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
 
   .host-col.offset {
     margin-top: 0;
   }
 
+  .booking-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
   .form-card,
   .contact-card {
-    padding: 28px;
+    padding: 32px;
   }
 
 }
