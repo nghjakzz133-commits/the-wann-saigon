@@ -1015,3 +1015,51 @@ button {
   --bg-dark: #7a0000;   /* đỏ đô luxury */
   --bg-soft: #1a0000;   /* layer đỏ sẫm */
 }
+:root {
+  --bg-dark: linear-gradient(180deg, #7a0000 0%, #0b0b0b 100%);
+}
+/* GOLD LUXURY TEXT – CORE SAFE */
+.gold,
+.text-gold,
+.section-title,
+.section h2,
+.section h3 {
+  background: linear-gradient(
+    120deg,
+    #fff3c4 0%,
+    var(--accent-gold) 30%,
+    #9e853f 55%,
+    #fff7d6 75%,
+    var(--accent-gold) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 1px 2px rgba(0,0,0,0.55),
+    0 0 14px rgba(191,167,106,0.45);
+
+  letter-spacing: 0.12em;
+}
+.section {
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(191,167,106,0.6),
+    transparent
+  );
+}
+.section p,
+.section li {
+  color: var(--text-sub);
+}
