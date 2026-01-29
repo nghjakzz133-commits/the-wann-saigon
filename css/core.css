@@ -1,27 +1,40 @@
 /* ==============================
    CORE.CSS – GLOBAL FOUNDATION
+   LUXURY UPGRADED VERSION
    DO NOT EDIT
 ================================ */
 
 :root {
-  --bg-dark: #0f0f0f;
-  --bg-soft: #151515;
-  --text-main: #ffffff;
-  --text-sub: #cfcfcf;
-  --accent-gold: #c9a24d;
+  /* ===== COLOR SYSTEM ===== */
+  --bg-dark: #0b0f14;        /* Midnight black – sâu, sang */
+  --bg-soft: #121823;        /* Layer nền phụ */
+  --bg-surface: rgba(255,255,255,0.03); /* Card / surface */
 
-  --font-main: 'Inter', system-ui, sans-serif;
-  --font-title: 'Playfair Display', serif;
+  --text-main: #f5f5f5;      /* Trắng dịu – đỡ gắt */
+  --text-sub: #c9c9c9;       /* Text phụ */
 
+  --accent-gold: #bfa76a;    /* Muted gold – luxury */
+
+  /* ===== TYPOGRAPHY ===== */
+  --font-main: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-title: 'Playfair Display', Georgia, serif;
+
+  /* ===== LAYOUT ===== */
   --container-width: 1200px;
+
+  /* ===== EFFECTS ===== */
+  --shadow-soft: 0 10px 40px rgba(0,0,0,0.45);
+  --border-soft: 1px solid rgba(255,255,255,0.06);
 }
 
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ===== BASE ===== */
 html {
   scroll-behavior: smooth;
 }
@@ -30,21 +43,35 @@ body {
   font-family: var(--font-main);
   background: var(--bg-dark);
   color: var(--text-main);
-  line-height: 1.6;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-img, video {
+/* ===== MEDIA ===== */
+img,
+video {
   max-width: 100%;
   display: block;
 }
 
+/* ===== LINK ===== */
 a {
   text-decoration: none;
   color: inherit;
 }
 
+/* ===== LAYOUT CONTAINER ===== */
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 0 24px;
+}
+
+/* ===== OPTIONAL GLOBAL UTILS (SAFE) ===== */
+.surface {
+  background: var(--bg-surface);
+  border: var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  border-radius: 16px;
 }
