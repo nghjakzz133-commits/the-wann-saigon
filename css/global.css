@@ -373,3 +373,51 @@ section p {
   opacity: 1;
   transform: translate(-50%, 0) scale(1);
 }
+/* =====================================================
+   MOBILE NAV – SLIDE DOWN LUXURY
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .main-nav {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 72px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+
+    background: color-mix(
+      in srgb,
+      var(--bg-dark) 96%,
+      transparent
+    );
+    backdrop-filter: blur(14px);
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-12px);
+
+    transition:
+      opacity .25s ease,
+      transform .35s cubic-bezier(.2,.8,.2,1);
+  }
+
+  .main-nav.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .main-nav a {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: .22em;
+  }
+
+}
