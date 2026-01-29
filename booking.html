@@ -104,13 +104,18 @@
       method="POST"
       class="form-card luxury-form">
 
-      <!-- FormSubmit config -->
+      <!-- ================= FormSubmit config ================= -->
       <input type="hidden" name="_subject" value="New Booking – The WANN Saigon">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
 
+      <!-- QUAN TRỌNG: FIX 404 -->
+      <input type="hidden" name="_next"
+            value="https://the-wann-saigon.pages.dev/booking.html?success=1">
+
+      <!-- ================= FORM FIELDS ================= -->
       <div class="form-group">
-        <label>Họ & Tên</label>
+        <label>Họ &amp; Tên</label>
         <input type="text" name="name" placeholder="Họ tên của bạn" required>
       </div>
 
@@ -144,8 +149,11 @@
 
       <div class="form-group">
         <label>Yêu cầu thêm</label>
-        <textarea name="note" rows="4"
-          placeholder="Bánh sinh nhật, DJ riêng, khu vực VIP..."></textarea>
+        <textarea
+          name="note"
+          rows="4"
+          placeholder="Bánh sinh nhật, DJ riêng, khu vực VIP...">
+        </textarea>
       </div>
 
       <button type="submit" class="btn-luxury">
