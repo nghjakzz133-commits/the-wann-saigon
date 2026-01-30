@@ -1602,3 +1602,30 @@ button {
   opacity: 1;
   transform: translateY(0);
 }
+/* VIDEO LIBRARY – FIX SWIPE iOS */
+
+.video-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.video-item-wrap {
+  position: relative;
+  flex: 0 0 auto;
+  width: 72vw;
+  max-width: 420px;
+  cursor: pointer;
+}
+
+/* 🔥 QUAN TRỌNG */
+.video-item {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;
+  object-fit: cover;
+  display: block;
+  pointer-events: none; /* 👈 CHÌA KHÓA */
+}
