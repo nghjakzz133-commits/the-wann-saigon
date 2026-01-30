@@ -189,3 +189,26 @@ document.querySelectorAll('.video-item').forEach(video => {
     video.play();
   });
 });
+document.querySelectorAll('.video-item-wrap').forEach(wrap => {
+  const video = wrap.querySelector('.video-item');
+  const hint  = wrap.querySelector('.video-sound-hint');
+
+  wrap.addEventListener('click', () => {
+    // tắt tiếng các video khác
+    document.querySelectorAll('.video-item').forEach(v => {
+      if (v !== video) {
+        v.muted = true;
+        v.controls = false;
+      }
+    });
+
+    // bật tiếng video được chọn
+    video.muted = false;
+    video.volume = 1;
+    video.controls = true;
+    video.play();
+
+    // ẩn hint
+    hint.style.display = 'none';
+  });
+});
