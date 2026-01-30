@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     '(prefers-reduced-motion: reduce)'
   ).matches;
 
+  const isTouchDevice = 'ontouchstart' in window;
+
   /* =====================================================
      1. HEADER + STICKY CTA
   ===================================================== */
@@ -116,9 +118,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* =====================================================
-     6. HORIZONTAL DRAG (DESKTOP)
+     6. HORIZONTAL DRAG (DESKTOP ONLY)
   ===================================================== */
   function initHorizontalDrag() {
+    if (isTouchDevice) return; // ⛔ mobile KHÔNG dùng drag JS
+
     document.querySelectorAll('.horizontal-scroll').forEach(gallery => {
       let isDown = false;
       let startX;
@@ -152,34 +156,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* =====================================================
-     7. VIDEO GESTURE FIX (iOS)
+     7. VIDEO GESTURE FIX (MOBILE)
      - kéo ngang trong video
      - kéo dọc vẫn scroll page
   ===================================================== */
   function initVideoGesture() {
-    document.querySelectorAll('.video-track').forEach(track => {
-      let startX = 0;
-      let startY = 0;
+    if (!isTouchDevice) return;
 
-      track.addEventListener('touchstart', e => {
-        startX = e.touches[0].clientX;
-        startY = e.touches[0].clientY;
-      }, { passive: true });
+    document
+      .querySelectorAll('.video-track, .night-motion .motion-track')
+      .forEach(track => {
+        let startX = 0;
+        let startY = 0;
 
-      track.addEventListener('touchmove', e => {
-        const dx = e.touches[0].clientX - startX;
-        const dy = e.touches[0].clientY - startY;
+        track.addEventListener('touchstart', e => {
+          startX = e.touches[0].clientX;
+          startY = e.touches[0].clientY;
+        }, { passive: true });
 
-        // chỉ chặn scroll dọc khi người dùng kéo NGANG
-        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 8) {
-          e.preventDefault();
-        }
-      }, { passive: false });
-    });
+        track.addEventListener('touchmove', e => {
+          const dx = e.touches[0].clientX - startX;
+          const dy = e.touches[0].clientY - startY;
+
+          // CHỈ chặn khi kéo ngang rõ ràng
+          if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 8) {
+            e.preventDefault();
+          }
+        }, { passive: false });
+      });
   }
 
   /* =====================================================
-     8. VIDEO SOUND ON TAP (iOS SAFE)
+     8. VIDEO SOUND – LIBRARY
   ===================================================== */
   function initVideoSound() {
     document.querySelectorAll('.video-item-wrap').forEach(wrap => {
@@ -203,19 +211,27 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-document.querySelectorAll('.night-motion video').forEach(video => {
-  video.addEventListener('click', () => {
-    // tắt tiếng các video home khác
-    document.querySelectorAll('.night-motion video').forEach(v => {
-      if (v !== video) v.muted = true;
-    });
 
-    // bật tiếng video được tap
-    video.muted = false;
-    video.volume = 1;
-    video.play();
-  });
-});
+  /* =====================================================
+     9. VIDEO SOUND – HOME (night-motion)
+  ===================================================== */
+  function initHomeVideoSound() {
+    document.querySelectorAll('.night-motion video').forEach(video => {
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', '');
+
+      video.addEventListener('click', () => {
+        document.querySelectorAll('.night-motion video').forEach(v => {
+          if (v !== video) v.muted = true;
+        });
+
+        video.muted = false;
+        video.volume = 1;
+        video.play();
+      });
+    });
+  }
+
   /* =====================================================
      INIT
   ===================================================== */
@@ -224,8 +240,9 @@ document.querySelectorAll('.night-motion video').forEach(video => {
   initLanguage();
   initMobileMenu();
   initHorizontalDrag();
-  initVideoGesture();   // 🔥 QUAN TRỌNG
+  initVideoGesture();
   initVideoSound();
+  initHomeVideoSound();
   handleScroll();
 
 });
