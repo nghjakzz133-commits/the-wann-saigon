@@ -23,12 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function handleScroll() {
     const y = window.scrollY;
 
-    // Header background
     if (header) {
       header.classList.toggle('scrolled', y > 60);
     }
 
-    // Sticky CTA after hero
     if (heroSection && stickyCTA) {
       const heroBottom = heroSection.getBoundingClientRect().bottom;
       stickyCTA.classList.toggle('show', heroBottom < 0);
@@ -37,10 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', handleScroll, { passive: true });
 
-
   /* =====================================================
-     2. REVEAL ON SCROLL (INTERSECTION OBSERVER)
-     Usage: data-reveal
+     2. REVEAL ON SCROLL
   ===================================================== */
   function initReveal() {
     const targets = document.querySelectorAll('[data-reveal]');
@@ -51,17 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
 
     targets.forEach(el => {
       el.classList.add('fade');
@@ -69,28 +62,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
   /* =====================================================
-     3. HERO TITLE INTRO (SUBTLE)
+     3. HERO INTRO
   ===================================================== */
   function initHeroIntro() {
     if (reduceMotion) return;
     const heroTitle = document.querySelector('.hero-title');
     if (!heroTitle) return;
 
-    setTimeout(() => {
-      heroTitle.classList.add('show');
-    }, 300);
+    setTimeout(() => heroTitle.classList.add('show'), 300);
   }
 
-
   /* =====================================================
-     4. LANGUAGE SWITCH (VI / EN)
+     4. LANGUAGE SWITCH
   ===================================================== */
   function initLanguage() {
     const langButtons = document.querySelectorAll('[data-lang]');
     const transEls = document.querySelectorAll('[data-vi][data-en]');
-
     if (!langButtons.length || !transEls.length) return;
 
     function setLanguage(lang) {
@@ -102,29 +90,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     langButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        setLanguage(btn.dataset.lang);
-      });
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
     });
 
     setLanguage(localStorage.getItem('lang') || 'vi');
   }
 
-
   /* =====================================================
-     5. MOBILE MENU TOGGLE
+     5. MOBILE MENU
   ===================================================== */
   function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNav = document.querySelector('.main-nav');
-
     if (!menuToggle || !mainNav) return;
 
     menuToggle.addEventListener('click', () => {
       mainNav.classList.toggle('open');
     });
 
-    // Auto-close when click link
     mainNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mainNav.classList.remove('open');
@@ -132,9 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
   /* =====================================================
-     6. HORIZONTAL DRAG SCROLL (DESKTOP)
+     6. HORIZONTAL DRAG (DESKTOP)
   ===================================================== */
   function initHorizontalDrag() {
     document.querySelectorAll('.horizontal-scroll').forEach(gallery => {
@@ -169,6 +151,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* =====================================================
+     7. VIDEO LIBRARY – SOUND ON TAP (iOS SAFE)
+     - giữ scroll ngang
+     - KHÔNG controls
+     - KHÔNG fullscreen
+  ===================================================== */
+  function initVideoSound() {
+    document.querySelectorAll('.video-item-wrap').forEach(wrap => {
+      const video = wrap.querySelector('.video-item');
+      const hint  = wrap.querySelector('.video-sound-hint');
+      if (!video) return;
+
+      // ép iOS luôn inline
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', '');
+
+      wrap.addEventListener('click', () => {
+        // tắt tiếng các video khác
+        document.querySelectorAll('.video-item').forEach(v => {
+          if (v !== video) v.muted = true;
+        });
+
+        // bật tiếng video hiện tại
+        video.muted = false;
+        video.volume = 1;
+        video.play();
+
+        // ẩn hint
+        if (hint) hint.style.display = 'none';
+      });
+    });
+  }
 
   /* =====================================================
      INIT
@@ -178,37 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initMobileMenu();
   initHorizontalDrag();
-  handleScroll(); // initial state
+  initVideoSound();
+  handleScroll();
 
-});
-document.querySelectorAll('.video-item').forEach(video => {
-  video.addEventListener('click', () => {
-    video.muted = false;
-    video.volume = 1;
-    video.controls = true;
-    video.play();
-  });
-});
-document.querySelectorAll('.video-item-wrap').forEach(wrap => {
-  const video = wrap.querySelector('.video-item');
-  const hint  = wrap.querySelector('.video-sound-hint');
-
-  wrap.addEventListener('click', () => {
-    // tắt tiếng các video khác
-    document.querySelectorAll('.video-item').forEach(v => {
-      if (v !== video) {
-        v.muted = true;
-        v.controls = false;
-      }
-    });
-
-    // bật tiếng video được chọn
-    video.muted = false;
-    video.volume = 1;
-    video.controls = true;
-    video.play();
-
-    // ẩn hint
-    hint.style.display = 'none';
-  });
 });
