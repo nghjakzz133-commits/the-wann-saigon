@@ -1549,3 +1549,38 @@ button {
     margin-bottom: 28px;
   }
 }
+.video-item-wrap {
+  position: relative;
+  cursor: pointer;
+}
+
+.video-item {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-sound-hint {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  letter-spacing: .4px;
+  color: #fff;
+  background: rgba(0,0,0,.55);
+  border: 1px solid rgba(255,215,160,.35);
+  border-radius: 999px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all .3s ease;
+  pointer-events: none;
+}
+
+.video-item-wrap:hover .video-sound-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
