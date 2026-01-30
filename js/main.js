@@ -181,3 +181,11 @@ document.addEventListener('DOMContentLoaded', () => {
   handleScroll(); // initial state
 
 });
+document.querySelectorAll('.video-item').forEach(video => {
+  video.addEventListener('click', () => {
+    video.muted = false;
+    video.volume = 1;
+    video.controls = true;
+    video.play();
+  });
+});
