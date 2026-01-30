@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
      6. HORIZONTAL DRAG (DESKTOP ONLY)
   ===================================================== */
   function initHorizontalDrag() {
-    if (isTouchDevice) return; // ⛔ mobile KHÔNG dùng drag JS
+    if (isTouchDevice) return;
 
     document.querySelectorAll('.horizontal-scroll').forEach(gallery => {
       let isDown = false;
@@ -156,9 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* =====================================================
-     7. VIDEO GESTURE FIX (MOBILE)
-     - kéo ngang trong video
-     - kéo dọc vẫn scroll page
+     7. VIDEO GESTURE FIX (MOBILE) – GIỮ NGUYÊN
   ===================================================== */
   function initVideoGesture() {
     if (!isTouchDevice) return;
@@ -178,7 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
           const dx = e.touches[0].clientX - startX;
           const dy = e.touches[0].clientY - startY;
 
-          // CHỈ chặn khi kéo ngang rõ ràng
           if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 8) {
             e.preventDefault();
           }
@@ -187,16 +184,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* =====================================================
-     8. VIDEO SOUND – LIBRARY
+     8. VIDEO SOUND – LIBRARY (CHỈ BẬT ÂM)
   ===================================================== */
   function initVideoSound() {
     document.querySelectorAll('.video-item-wrap').forEach(wrap => {
       const video = wrap.querySelector('.video-item');
       const hint  = wrap.querySelector('.video-sound-hint');
       if (!video) return;
-
-      video.setAttribute('playsinline', '');
-      video.setAttribute('webkit-playsinline', '');
 
       wrap.addEventListener('click', () => {
         document.querySelectorAll('.video-item').forEach(v => {
@@ -205,7 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         video.muted = false;
         video.volume = 1;
-        video.play();
 
         if (hint) hint.style.display = 'none';
       });
@@ -213,13 +206,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* =====================================================
-     9. VIDEO SOUND – HOME (night-motion)
+     9. VIDEO SOUND – HOME (CHỈ BẬT ÂM)
   ===================================================== */
   function initHomeVideoSound() {
     document.querySelectorAll('.night-motion video').forEach(video => {
-      video.setAttribute('playsinline', '');
-      video.setAttribute('webkit-playsinline', '');
-
       video.addEventListener('click', () => {
         document.querySelectorAll('.night-motion video').forEach(v => {
           if (v !== video) v.muted = true;
@@ -227,7 +217,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         video.muted = false;
         video.volume = 1;
-        video.play();
       });
     });
   }
