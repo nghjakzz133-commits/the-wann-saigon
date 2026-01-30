@@ -1550,31 +1550,32 @@ button {
   }
 }
 /* ================================
-   VIDEO LIBRARY – iOS SAFE
-   Chặn swipe dọc, giữ swipe ngang
+   VIDEO LIBRARY – SAFE & SIMPLE
+   Chỉ lo layout, KHÔNG đụng gesture
 ================================ */
 
 .video-track {
   display: flex;
   gap: 16px;
   overflow-x: auto;
-  overflow-y: hidden;              /* CHẶN KÉO DỌC */
+  overflow-y: hidden; /* chỉ ẩn scrollbar dọc */
   -webkit-overflow-scrolling: touch;
-  touch-action: pan-x;             /* CHỈ CHO KÉO NGANG */
 }
 
 .video-item-wrap {
   position: relative;
   flex: 0 0 auto;
+  width: 72vw;
+  max-width: 420px;
   cursor: pointer;
-  touch-action: pan-x;             /* chặn swipe dọc tại item */
 }
 
 .video-item {
   width: 100%;
   height: auto;
+  max-height: 60vh;
+  object-fit: cover;
   display: block;
-  pointer-events: auto;
 }
 
 .video-sound-hint {
@@ -1600,28 +1601,4 @@ button {
 .video-item-wrap:hover .video-sound-hint {
   opacity: 1;
   transform: translateY(0);
-}
-.video-track {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  overflow-y: hidden;          /* chỉ ẩn scrollbar dọc */
-  -webkit-overflow-scrolling: touch;
-}
-.video-item-wrap {
-  position: relative;
-  flex: 0 0 auto;
-  width: 72vw;             /* kiểm soát kích thước mobile */
-  max-width: 420px;
-}
-
-.video-item {
-  width: 100%;
-  height: auto;
-  max-height: 60vh;        /* QUAN TRỌNG */
-  object-fit: cover;      /* không phá layout */
-  display: block;
-}
-.video-library {
-  overflow: hidden; /* khóa tràn */
 }
