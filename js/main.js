@@ -203,7 +203,19 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+document.querySelectorAll('.night-motion video').forEach(video => {
+  video.addEventListener('click', () => {
+    // tắt tiếng các video home khác
+    document.querySelectorAll('.night-motion video').forEach(v => {
+      if (v !== video) v.muted = true;
+    });
 
+    // bật tiếng video được tap
+    video.muted = false;
+    video.volume = 1;
+    video.play();
+  });
+});
   /* =====================================================
      INIT
   ===================================================== */
