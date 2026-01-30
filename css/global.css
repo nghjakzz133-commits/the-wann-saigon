@@ -1605,12 +1605,8 @@ button {
   display: flex;
   gap: 16px;
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: hidden;          /* chỉ ẩn scrollbar dọc */
   -webkit-overflow-scrolling: touch;
-  touch-action: pan-x;
-
-  max-height: 60vh;        /* QUAN TRỌNG */
-  align-items: center;     /* khóa trục dọc */
 }
 .video-item-wrap {
   position: relative;
