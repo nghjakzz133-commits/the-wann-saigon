@@ -1549,15 +1549,32 @@ button {
     margin-bottom: 28px;
   }
 }
+/* ================================
+   VIDEO LIBRARY – iOS SAFE
+   Chặn swipe dọc, giữ swipe ngang
+================================ */
+
+.video-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;              /* CHẶN KÉO DỌC */
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;             /* CHỈ CHO KÉO NGANG */
+}
+
 .video-item-wrap {
   position: relative;
+  flex: 0 0 auto;
   cursor: pointer;
+  touch-action: pan-x;             /* chặn swipe dọc tại item */
 }
 
 .video-item {
   width: 100%;
   height: auto;
   display: block;
+  pointer-events: auto;
 }
 
 .video-sound-hint {
