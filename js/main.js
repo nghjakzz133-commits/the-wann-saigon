@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ).matches;
 
   /* =====================================================
-     1. HEADER + STICKY CTA (SCROLL STATE)
+     1. HEADER + STICKY CTA
   ===================================================== */
   const header = document.querySelector('.site-header');
   const heroSection = document.querySelector('.hero');
@@ -152,10 +152,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* =====================================================
-     7. VIDEO LIBRARY – SOUND ON TAP (iOS SAFE)
-     - giữ scroll ngang
-     - KHÔNG controls
-     - KHÔNG fullscreen
+     7. VIDEO GESTURE FIX (iOS)
+     - kéo ngang trong video
+     - kéo dọc vẫn scroll page
+  ===================================================== */
+  function initVideoGesture() {
+    document.querySelectorAll('.video-track').forEach(track => {
+      let startX = 0;
+      let startY = 0;
+
+      track.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+      }, { passive: true });
+
+      track.addEventListener('touchmove', e => {
+        const dx = e.touches[0].clientX - startX;
+        const dy = e.touches[0].clientY - startY;
+
+        // chỉ chặn scroll dọc khi người dùng kéo NGANG
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 8) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+    });
+  }
+
+  /* =====================================================
+     8. VIDEO SOUND ON TAP (iOS SAFE)
   ===================================================== */
   function initVideoSound() {
     document.querySelectorAll('.video-item-wrap').forEach(wrap => {
@@ -163,22 +187,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const hint  = wrap.querySelector('.video-sound-hint');
       if (!video) return;
 
-      // ép iOS luôn inline
       video.setAttribute('playsinline', '');
       video.setAttribute('webkit-playsinline', '');
 
       wrap.addEventListener('click', () => {
-        // tắt tiếng các video khác
         document.querySelectorAll('.video-item').forEach(v => {
           if (v !== video) v.muted = true;
         });
 
-        // bật tiếng video hiện tại
         video.muted = false;
         video.volume = 1;
         video.play();
 
-        // ẩn hint
         if (hint) hint.style.display = 'none';
       });
     });
@@ -192,6 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initMobileMenu();
   initHorizontalDrag();
+  initVideoGesture();   // 🔥 QUAN TRỌNG
   initVideoSound();
   handleScroll();
 
