@@ -1601,3 +1601,31 @@ button {
   opacity: 1;
   transform: translateY(0);
 }
+.video-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+
+  max-height: 60vh;        /* QUAN TRỌNG */
+  align-items: center;     /* khóa trục dọc */
+}
+.video-item-wrap {
+  position: relative;
+  flex: 0 0 auto;
+  width: 72vw;             /* kiểm soát kích thước mobile */
+  max-width: 420px;
+}
+
+.video-item {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;        /* QUAN TRỌNG */
+  object-fit: cover;      /* không phá layout */
+  display: block;
+}
+.video-library {
+  overflow: hidden; /* khóa tràn */
+}
